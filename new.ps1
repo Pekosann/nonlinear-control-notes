@@ -31,20 +31,33 @@ $path = Join-Path $notesDir "$slug.md"
 if (Test-Path $path) { throw "$path already exists." }
 
 $tagStr = '[' + ($Tags -join ', ') + ']'
-$content = @"
+
+# Single-quoted here-string: PowerShell does not touch backticks or $ inside it,
+# so the example math in the stub survives verbatim. Placeholders filled in after.
+$template = @'
 ---
-title: "$num — $Title"
-section: $Section
-tags: $tagStr
+title: "@@NUM@@ — @@TITLE@@"
+section: @@SECTION@@
+tags: @@TAGS@@
 summary: ""
 ---
 
-Tulis catatanmu di sini. Math pakai ``$``…``$`` seperti di Obsidian, misalnya
-`$\dot{x} = f(x) + g(x)u$`.
+Tulis catatanmu di sini. Math pakai tanda dolar seperti di Obsidian, misalnya
+$\dot{x} = f(x) + g(x)u$ untuk inline.
+
+Untuk persamaan yang berdiri sendiri, pisahkan dengan baris kosong:
+
+$$\dot{x} = f(x) + g(x)u$$
 
 ## Sub-bagian
 
-"@
+'@
+
+$content = $template.
+    Replace('@@NUM@@', $num).
+    Replace('@@TITLE@@', $Title).
+    Replace('@@SECTION@@', $Section).
+    Replace('@@TAGS@@', $tagStr)
 [IO.File]::WriteAllText($path, ($content -replace "`r`n", "`n"), (New-Object Text.UTF8Encoding $false))
 Write-Host "Created notes\$slug.md" -ForegroundColor Green
 
