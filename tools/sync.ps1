@@ -68,6 +68,25 @@ function Convert-Math([string[]]$lines) {
     return $out
 }
 
+# ------------------------------------------------------- scrub .bib files ----
+# Zotero writes  file = {C:\Users\<you>\Zotero\storage\...}  into every entry.
+# The repo is public and nothing renders that field, so strip it on every sync —
+# otherwise each re-export from Zotero puts your username back in the repo.
+
+$bibDir = Join-Path $root '_bibliography'
+if (Test-Path $bibDir) {
+    foreach ($bib in (Get-ChildItem $bibDir -Filter *.bib)) {
+        $text = [IO.File]::ReadAllText($bib.FullName)
+        # a file/annotation field on its own line, with or without a trailing comma
+        $stripped = [regex]::Replace($text, '(?im)^[ \t]*(file|annotation)[ \t]*=[ \t]*\{[^}]*\},?[ \t]*\r?\n', '')
+        # tidy a dangling comma before the closing brace
+        $stripped = [regex]::Replace($stripped, ',(\s*\n\s*\})', '$1')
+        if (Write-IfChanged $bib.FullName $stripped) {
+            $changed += "_bibliography\$($bib.Name)  (stripped local file paths)"
+        }
+    }
+}
+
 # ------------------------------------------------------------ read notes ----
 
 if (-not (Test-Path $notesDir)) { throw "No notes\ directory at $notesDir" }
