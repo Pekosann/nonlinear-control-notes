@@ -9,8 +9,12 @@ last_updated: Jul 22, 2026
 ---
 
 Dua CSTR terpasang seri, didinginkan oleh satu aliran pendingin yang mengalir
-*cocurrent* (searah dengan aliran proses). Reaksi eksotermik ireversibel $$A \to B$$
+*cocurrent* (searah dengan aliran proses). Reaksi eksotermik ireversibel $A \to B$
 terjadi di kedua tangki [@henson1990] (Pers. 24–28 di paper aslinya).
+
+![Skema dua CSTR seri dengan pendingin cocurrent](figures/henson1990-dua-cstr-seri.png)
+*Gambar 1. Sistem dua CSTR seri. Pendingin masuk jaket 1 pada $T_{cf}$, keluar pada
+$T_{c1}$, lalu masuk jaket 2 — inilah alasan Pers. 4 memakai $T_{c1}$, bukan $T_{cf}$.*
 
 ## Model Proses (Pers. 1–4)
 
@@ -28,7 +32,7 @@ $$
 
 ### Catatan untuk Pers. 4
 
-Temperatur pendingin yang masuk ke jaket kedua **bukan** $$T_{cf}$$, melainkan
+Temperatur pendingin yang masuk ke jaket kedua **bukan** $T_{cf}$, melainkan
 temperatur keluar pendingin dari jaket pertama. Untuk aliran *cocurrent*,
 temperatur pendingin setelah tangki 1 adalah:
 
@@ -37,7 +41,7 @@ T_{c,\text{out},1} = T_1 + \exp\!\left(-\frac{hA_1}{q_c\,\rho_c\,C_{pc}}\right)(
 $$
 
 Inilah temperatur pendingin masuk untuk tangki 2. Jadi suku dalam kurung siku di
-Pers. 4 sebenarnya adalah $$T_{c,\text{out},1} - T_2$$.
+Pers. 4 sebenarnya adalah $T_{c,\text{out},1} - T_2$.
 
 ## Definisi State, Input, Gangguan, dan Output (Pers. 5)
 

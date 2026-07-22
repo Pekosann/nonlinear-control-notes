@@ -114,18 +114,35 @@ module Bibliography
       end
     end
 
+    SUFFIX = /\A(jr|sr|ii|iii|iv|v)\.?\z/i.freeze
+
+    # "Doyle, Francis J., III" -> "Doyle, F. J., III"
     def abbreviate(name)
       name = name.strip
+      suffix = nil
       if name.include?(',')
-        last, given = name.split(',', 2)
+        parts = name.split(',').map(&:strip)
+        parts.reject! do |p|
+          if p =~ SUFFIX then suffix = p.sub(/\.\z/, ''); true else false end
+        end
+        last = parts[0]
+        given = parts[1..-1].to_a.join(' ')
       else
         parts = name.split(/\s+/)
+        suffix = parts.pop.sub(/\.\z/, '') if parts.last =~ SUFFIX
         last = parts.pop
         given = parts.join(' ')
       end
       initials = given.to_s.split(/[\s.\-]+/).reject(&:empty?)
                       .map { |g| "#{g[0].upcase}." }.join(' ')
-      initials.empty? ? last.strip : "#{last.strip}, #{initials}"
+      out = initials.empty? ? last.to_s.strip : "#{last.to_s.strip}, #{initials}"
+      suffix ? "#{out}, #{suffix}" : out
+    end
+
+    def ordinal(n)
+      i = n.to_s[/\d+/].to_i
+      return "#{i}th" if (11..13).cover?(i % 100)
+      "#{i}#{{ 1 => 'st', 2 => 'nd', 3 => 'rd' }.fetch(i % 10, 'th')}"
     end
 
     def esc(str)
@@ -138,7 +155,11 @@ module Bibliography
       parts = []
       a = authors(e)
       parts << "#{esc(a)} (#{year(e)})." if a
-      parts << "#{esc(e['title'])}." if e['title']
+      if e['title']
+        title = +"#{esc(e['title'])}"
+        title << " (#{ordinal(e['edition'])} ed.)" if e['edition']
+        parts << "#{title}."
+      end
 
       journal = e['journaltitle'] || e['journal'] || e['booktitle']
       if journal
@@ -148,7 +169,8 @@ module Bibliography
         loc << ", #{esc(e['pages'].to_s.gsub('--', '–'))}" if e['pages']
         parts << "#{loc}."
       elsif e['publisher']
-        parts << "#{esc(e['publisher'])}."
+        pub = e['location'] || e['address']
+        parts << (pub ? "#{esc(pub)}: #{esc(e['publisher'])}." : "#{esc(e['publisher'])}.")
       elsif e['organization']
         parts << "#{esc(e['organization'])}."
       end

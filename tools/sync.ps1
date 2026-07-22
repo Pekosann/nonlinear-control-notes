@@ -46,22 +46,29 @@ function Get-Slug($text) {
     return $s.Trim('-')
 }
 
-# Convert single-dollar math to double-dollar, skipping code.
+# Normalise inline math back to Obsidian's single-dollar form.
+# The site no longer needs $$...$$ inline — _plugins/inline_math.rb does that
+# conversion at build time — and in Obsidian $$...$$ means a centred display
+# equation, so keeping it inline would render wrongly there.
+# A line that is exactly "$$" delimits a real display block and is left alone.
 function Convert-Math([string[]]$lines) {
     $out = New-Object System.Collections.Generic.List[string]
     $inFence = $false
+    $inDisplay = $false
     foreach ($line in $lines) {
         if ($line -match '^\s*(```|~~~)') { $inFence = -not $inFence; $out.Add($line); continue }
-        if ($inFence -or $line -match '^\s{4,}\S') { $out.Add($line); continue }
+        if ($inFence) { $out.Add($line); continue }
+        if ($line.Trim() -eq '$$') { $inDisplay = -not $inDisplay; $out.Add($line); continue }
+        if ($inDisplay) { $out.Add($line); continue }
 
-        # Protect inline code spans, then convert $...$ outside of them.
+        # Protect inline code spans, then collapse $$...$$ pairs on this line.
         $spans = New-Object System.Collections.Generic.List[string]
         $work = [regex]::Replace($line, '`[^`]*`', {
             param($m)
             $spans.Add($m.Value)
             return "!!CODE$($spans.Count - 1)!!"
         })
-        $work = [regex]::Replace($work, '(?<![$\\])\$(?!\$)([^$\r\n]+?)(?<![$\\])\$(?!\$)', '$$$$$1$$$$')
+        $work = [regex]::Replace($work, '\$\$([^$\r\n]+?)\$\$', '$$$1$$')
         for ($i = $spans.Count - 1; $i -ge 0; $i--) { $work = $work.Replace("!!CODE$i!!", $spans[$i]) }
         $out.Add($work)
     }
@@ -72,6 +79,31 @@ function Convert-Math([string[]]$lines) {
 # A .bib dropped in notes\ would be published verbatim by Jekyll (and its Zotero
 # file = {...} paths with it), and the citation plugin would not even see it —
 # it only reads _bibliography\. So move any stray .bib there first.
+
+# Obsidian and VS Code drop pasted images next to the .md. Pages are served from
+# the site root, so an image left in notes\ 404s live. Move them to figures\ and
+# slugify the name — "Pasted image 20260722174535.png" has spaces, which break
+# the Markdown link. References in the notes are rewritten further down.
+$figDir = Join-Path $root 'figures'
+$movedImages = @{}
+$imageExt = @('.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp')
+foreach ($img in (Get-ChildItem $notesDir -File -ErrorAction SilentlyContinue |
+                  Where-Object { $imageExt -contains $_.Extension.ToLower() })) {
+    if (-not (Test-Path $figDir)) {
+        if (-not $Check) { New-Item -ItemType Directory $figDir | Out-Null }
+    }
+    $newName = (Get-Slug ([IO.Path]::GetFileNameWithoutExtension($img.Name))) + $img.Extension.ToLower()
+    $dest = Join-Path $figDir $newName
+    $n = 2
+    while ((Test-Path $dest) -and -not $Check) {
+        $newName = (Get-Slug ([IO.Path]::GetFileNameWithoutExtension($img.Name))) + "-$n" + $img.Extension.ToLower()
+        $dest = Join-Path $figDir $newName
+        $n++
+    }
+    if (-not $Check) { Move-Item $img.FullName $dest -Force }
+    $movedImages[$img.Name] = $newName
+    $changed += "moved notes\$($img.Name) -> figures\$newName"
+}
 
 $bibDir = Join-Path $root '_bibliography'
 foreach ($stray in (Get-ChildItem $notesDir -Filter *.bib -ErrorAction SilentlyContinue)) {
@@ -165,6 +197,14 @@ foreach ($f in $files) {
     # but pages are served from the site root, so they need figures/x.png.
     $body = $body -replace '\]\((?:\.\./)+figures/', '](figures/'
     $body = $body -replace '(src=")(?:\.\./)+figures/', '$1figures/'
+
+    # Point references at whatever names the images ended up with in figures\.
+    foreach ($old in $movedImages.Keys) {
+        $new = $movedImages[$old]
+        $body = $body.Replace("![[$old]]", "![](figures/$new)")
+        $body = $body.Replace("]($old)", "](figures/$new)")
+        $body = $body.Replace("](figures/$old)", "](figures/$new)")
+    }
     $body = [regex]::Replace($body, '!\[\[([^\]|]+?)(\|[^\]]*)?\]\]', {
         param($m) "![]({0})" -f "figures/$($m.Groups[1].Value)"
     })

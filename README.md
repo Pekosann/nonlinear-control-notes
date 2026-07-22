@@ -79,22 +79,43 @@ nomori ulang, lalu jalankan `.\sync.cmd`.
 
 ## Menulis math
 
-Tulis `$...$` seperti biasa. `sync.ps1` mengubahnya jadi `$$...$$` di file sumber —
-itu bukan bug, itu yang membuat kramdown tidak merusak subskrip (`x_1 ... x_2`
-kalau tidak dilindungi akan berubah jadi *italic*). Obsidian tetap membaca `$$...$$`
-dengan benar, jadi filenya tetap bisa dipakai dua-duanya.
+**Persis seperti Obsidian.** File `.md`-mu tidak diubah sama sekali.
 
-Untuk persamaan yang berdiri sendiri (display, di tengah), pisahkan dengan baris kosong:
+| Kamu tulis | Hasilnya |
+|---|---|
+| `$x \in \mathbb{R}^n$` | inline, menyatu dengan kalimat |
+| `$$ ... $$` di baris sendiri | display, di tengah dan lebih besar |
 
 ```markdown
-Bentuk umumnya:
+Bentuk umumnya $\dot{x} = f(x) + g(x)u$ dengan $x \in \mathbb{R}^n$.
 
-$$\dot{x} = f(x) + g(x)u$$
-
-dengan $x \in \mathbb{R}^n$.
+$$
+\begin{align}
+\dot{x} &= f(x) + g(x)u \tag{1}\\
+y &= h(x) \tag{2}
+\end{align}
+$$
 ```
 
-Makro tambahan yang tersedia: `\RR` (= `\mathbb{R}`), `\dd`, `\pmatrix{...}`, `\bmatrix{...}`.
+Kalau perlu tanda dolar sungguhan (harga, dsb.), tulis `\$`.
+
+<details>
+<summary>Kenapa perlu plugin untuk ini</summary>
+
+kramdown (mesin Markdown-nya Jekyll) cuma mengenali `$$...$$` sebagai math.
+Math dolar-tunggal dianggap teks biasa, jadi isinya ikut diproses Markdown:
+`\\` di dalam `\pmatrix` menyusut jadi `\`, dan `_` atau `*` bisa berubah jadi
+*italic*. Sebaliknya di Obsidian `$$...$$` berarti persamaan display — jadi
+menulis `$$...$$` inline akan salah tampil di Obsidian.
+
+`_plugins/inline_math.rb` menyelesaikan keduanya: waktu build, `$x$` diubah jadi
+`$$x$$` **di memori saja**, tepat sebelum kramdown jalan. Blok `$$ ... $$`,
+fenced code, dan `` `inline code` `` dilewati. File sumbermu tetap utuh.
+</details>
+
+Makro tambahan: `\RR` (= `\mathbb{R}`), `\dd`, `\pmatrix{...}`, `\bmatrix{...}`.
+Penomoran pakai `\tag{1}` — nomornya milik catatanmu sendiri, tidak harus ikut
+nomor di paper aslinya.
 
 ## Sitasi & referensi
 
@@ -114,7 +135,8 @@ Metode ini diperkenalkan oleh [1]. Buku teks standarnya [2]. Dua sekaligus: [1, 
 ## Referensi
 1. Henson, M. A. & Seborg, D. E. (1990). Input‐output Linearization of General
    Nonlinear Processes. AIChE Journal, 36(11), 1753–1757. https://doi.org/...
-2. Seborg, D. E. (n.d.). Process Dynamics and Control.
+2. Seborg, D. E., Edgar, T. F., Mellichamp, D. A., & Doyle, F. J., III (2016).
+   Process Dynamics and Control (4th ed.). Hoboken, NJ: John Wiley & Sons.
 3. Guan, H., Ye, L., ... (2023). Dynamic Modeling and Sensitivity Analysis ...
 ```
 
@@ -124,8 +146,10 @@ Metode ini diperkenalkan oleh [1]. Buku teks standarnya [2]. Dua sekaligus: [1, 
   yang memang menyitasi sesuatu.
 - Kunci yang tidak ada di `.bib` tetap tampil (dengan teks merah) dan memunculkan
   peringatan kuning waktu build, jadi salah ketik ketahuan.
-- `_bibliography/` tidak ikut dipublish, jadi path Zotero lokal di field `file = {...}`
-  tidak bocor ke internet. **Jangan taruh `.bib` di `notes/`** — folder itu ikut dipublish.
+- `_bibliography/` tidak ikut dipublish, dan `sync` membuang field `file = {...}`
+  (berisi path Zotero lokalmu) setiap kali jalan — repo ini publik.
+- Kalau Zotero mengekspor ke `notes\`, `sync` otomatis memindahkannya ke
+  `_bibliography\`. Tidak perlu diingat-ingat.
 
 Mesinnya ada di `_plugins/bibliography.rb`. Plugin Jekyll hanya jalan karena situs ini
 dibangun lewat GitHub Actions sendiri, bukan build bawaan GitHub Pages (yang mode-nya
@@ -191,7 +215,7 @@ Daftar isi halaman muncul otomatis; matikan dengan `toc: false` di front matter.
 notes\          ← TULISANMU ADA DI SINI
 figures\        ← gambar
 _bibliography\  ← references.bib dari Zotero (tidak dipublish)
-_plugins\       ← mesin sitasi [@key]
+_plugins\       ← mesin sitasi [@key] + math inline
 tags\           ← halaman tag (dibuat otomatis oleh sync)
 _data\sidebars\ ← sidebar (dibuat otomatis oleh sync)
 _archive\       ← draft lama, tidak ikut dipublish
