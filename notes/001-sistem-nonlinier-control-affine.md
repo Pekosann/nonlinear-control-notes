@@ -8,7 +8,7 @@ folder: notes
 last_updated: Jul 22, 2026
 ---
 
-Misalkan sebuah sistem dapat dibentuk menjadi persamaan *nonlinear differential* dengan bentuk [@henson1990]:
+Misalkan sebuah sistem dapat dibentuk menjadi persamaan *nonlinear differential* dengan bentuk [@zotero-item-11]:
 $\dot{x}=f(x)+g(x)u\quad (1)$
 $y=h(x)\quad(2)$
 memiliki *internal state* $x=(x_1,x_2,...,x_n)\in\mathbb{R}^n$
@@ -37,10 +37,21 @@ persis bentuk $a + bu$. Itulah maksudnya: **linier terhadap input $u$**, walaupu
 boleh serumit apa pun terhadap state $x$. Yang disyaratkan cuma soal bagaimana
 $u$ dilibatkan dalam persamaan, bukan soal seberapa nonlinier sistemnya.
 
-Dua bagiannya punya nama sendiri:
+Istilah "affine terhadap input yang dimanipulasi" ini dipakai [@corriou] untuk
+menandai kelas sistem yang bisa ditangani *nonlinear geometric control*.
+Kedua fungsinya disebut **vector field of the dynamics** ($f$) dan
+**vector field of the control** ($g$) [@corriou]:
 
-- $f(x)$ — *drift*: ke mana sistem bergerak sendiri kalau inputnya dimatikan ($u=0$).
-- $g(x)$ — *input vector field*: ke arah mana dan seberapa kuat input menggeser state.
+- $f(x)$ — vector field dinamika: ke mana sistem bergerak sendiri kalau inputnya
+  dimatikan ($u=0$). Di literatur *differential-geometric* sering disebut *drift*.
+- $g(x)$ — vector field kontrol: ke arah mana dan seberapa kuat input menggeser
+  state. Sering juga ditulis *input vector field*.
+
+> Menurut [@corriou], sebagian besar sistem di teknik kimia memang berbentuk
+> Pers. (1). Alasannya sederhana: input yang dimanipulasi biasanya laju alir atau
+> bukaan valve, dan besaran itu masuk secara linier ke dalam model.
+> Jadi syarat affine tidak seketat kelihatannya — walau [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html)
+> menunjukkan bahwa ada pengecualiannya.
 
 Yang **tidak boleh** adalah $u$ terjebak di dalam fungsi nonlinier, misalnya
 $e^{u}$, $u^2$, atau $\sqrt{u}$. Kalau itu terjadi, sistemnya hanya bisa ditulis
