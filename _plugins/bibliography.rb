@@ -127,6 +127,11 @@ module Bibliography
         end
         last = parts[0]
         given = parts[1..-1].to_a.join(' ')
+        # Zotero writes the suffix onto the surname: "Doyle III, Francis J"
+        if suffix.nil? && last =~ /\A(.+?)\s+(jr|sr|ii|iii|iv|v)\.?\z/i
+          last = Regexp.last_match(1)
+          suffix = Regexp.last_match(2)
+        end
       else
         parts = name.split(/\s+/)
         suffix = parts.pop.sub(/\.\z/, '') if parts.last =~ SUFFIX

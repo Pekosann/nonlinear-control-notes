@@ -110,9 +110,12 @@ foreach ($stray in (Get-ChildItem $notesDir -Filter *.bib -ErrorAction SilentlyC
     if (-not (Test-Path $bibDir)) {
         if (-not $Check) { New-Item -ItemType Directory $bibDir | Out-Null }
     }
-    $dest = Join-Path $bibDir $stray.Name
+    # Always land on the one canonical name. A Zotero export is a full dump of
+    # whatever you exported, so re-exporting should replace the file, not pile up
+    # a second copy with the same keys in it.
+    $dest = Join-Path $bibDir 'references.bib'
     if (-not $Check) { Move-Item $stray.FullName $dest -Force }
-    $changed += "moved notes\$($stray.Name) -> _bibliography\  (notes\ is published; _bibliography\ is not)"
+    $changed += "moved notes\$($stray.Name) -> _bibliography\references.bib"
 }
 
 # Zotero writes  file = {C:\Users\<you>\Zotero\storage\...}  into every entry.
@@ -152,6 +155,7 @@ foreach ($f in $files) {
 
 $allTags = New-Object System.Collections.Generic.HashSet[string]
 $entries = @()
+$citedKeys = @{}   # citation key -> list of notes citing it
 
 foreach ($f in $files) {
     $slug = [IO.Path]::GetFileNameWithoutExtension($f.Name)
@@ -220,6 +224,15 @@ foreach ($f in $files) {
     })
     $body = (Convert-Math ($body -split "\r?\n")) -join "`n"
     $body = $body.TrimStart("`n")
+
+    # Note which references this page cites, so a shrinking .bib can be caught.
+    foreach ($m in [regex]::Matches($body, '\[@([A-Za-z0-9_:.\-]+(?:\s*;\s*@[A-Za-z0-9_:.\-]+)*)\]')) {
+        foreach ($k in ($m.Groups[1].Value -split ';')) {
+            $key = $k.Trim().TrimStart('@')
+            if (-not $citedKeys.ContainsKey($key)) { $citedKeys[$key] = @() }
+            $citedKeys[$key] += $f.Name
+        }
+    }
 
     # --- reassemble ---------------------------------------------------------
     $order = @('title', 'section', 'tags', 'summary', 'permalink', 'folder', 'last_updated')
@@ -318,6 +331,30 @@ Get-ChildItem (Join-Path $root 'tags') -Filter 'tag_*.md' -ErrorAction SilentlyC
         if (-not $Check) { Remove-Item $_.FullName }
         $changed += "removed tags\$($_.Name)"
     }
+}
+
+# ------------------------------------------------- cited-but-missing keys ----
+# A Zotero re-export overwrites the .bib wholesale. Export a different collection
+# and keys silently vanish, leaving red "[?]" citations on the live site. Catch it
+# here instead.
+
+$bibKeys = New-Object System.Collections.Generic.HashSet[string]
+if (Test-Path $bibDir) {
+    foreach ($bib in (Get-ChildItem $bibDir -Filter *.bib)) {
+        foreach ($m in [regex]::Matches([IO.File]::ReadAllText($bib.FullName), '(?m)^\s*@\w+\s*\{\s*([^,\s}]+)')) {
+            [void]$bibKeys.Add($m.Groups[1].Value)
+        }
+    }
+}
+
+$missing = $citedKeys.Keys | Where-Object { -not $bibKeys.Contains($_) } | Sort-Object
+if ($missing) {
+    Write-Host ""
+    Write-Host "!! SITASI TIDAK KETEMU di _bibliography\ :" -ForegroundColor Red
+    foreach ($k in $missing) {
+        Write-Host ("   [@{0}]  dipakai di: {1}" -f $k, (($citedKeys[$k] | Sort-Object -Unique) -join ', ')) -ForegroundColor Red
+    }
+    Write-Host "   Kemungkinan export Zotero-nya beda koleksi, atau citation key-nya berubah." -ForegroundColor Yellow
 }
 
 # --------------------------------------------------------------- report -----
