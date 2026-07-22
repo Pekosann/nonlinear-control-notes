@@ -8,6 +8,11 @@
 }
 mjx-container[display="true"] {
   margin: 0.9em 0 !important;
+  /* Wide matrices scroll inside the column instead of pushing the page sideways. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 100%;
+  padding-bottom: 2px;
 }
 
 /* The theme's default line-height is tight for text with inline math. */
