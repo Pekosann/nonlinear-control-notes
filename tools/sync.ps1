@@ -155,7 +155,8 @@ foreach ($f in $files) {
 
 $allTags = New-Object System.Collections.Generic.HashSet[string]
 $entries = @()
-$citedKeys = @{}   # citation key -> list of notes citing it
+$citedKeys = @{}       # citation key -> list of notes citing it
+$internalLinks = @{}   # linked page slug -> list of notes linking to it
 
 foreach ($f in $files) {
     $slug = [IO.Path]::GetFileNameWithoutExtension($f.Name)
@@ -166,8 +167,23 @@ foreach ($f in $files) {
     $body = $raw
     if ($raw -match '(?s)^﻿?---\r?\n(.*?)\r?\n---\r?\n?(.*)$') {
         $fmText = $Matches[1]; $body = $Matches[2]
+        # Handles both inline (tags: [a, b]) and the block style Obsidian writes:
+        #   tags:
+        #     - a
+        #     - b
+        # Block lists are folded into the inline form. Missing this silently
+        # dropped every tag written the Obsidian way.
+        $lastKey = $null
         foreach ($l in ($fmText -split "\r?\n")) {
-            if ($l -match '^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$') { $fm[$Matches[1]] = $Matches[2].Trim() }
+            if ($l -match '^([A-Za-z_][A-Za-z0-9_]*):\s*(.*)$') {
+                $lastKey = $Matches[1]
+                $fm[$lastKey] = $Matches[2].Trim()
+            }
+            elseif ($lastKey -and $l -match '^\s*-\s*(.+?)\s*$') {
+                $item = $Matches[1].Trim().Trim('"').Trim("'")
+                if ([string]::IsNullOrWhiteSpace($fm[$lastKey])) { $fm[$lastKey] = "[$item]" }
+                else { $fm[$lastKey] = $fm[$lastKey].TrimEnd(']') + ", $item]" }
+            }
         }
     }
 
@@ -224,6 +240,15 @@ foreach ($f in $files) {
     })
     $body = (Convert-Math ($body -split "\r?\n")) -join "`n"
     $body = $body.TrimStart("`n")
+
+    # Note which pages this one links to, so renaming a note cannot silently
+    # leave dead links behind. (Wikilinks are resolved to real links above, so
+    # after a rename the old target survives in the source as plain Markdown.)
+    foreach ($m in [regex]::Matches($body, '\]\((?!https?:|#|mailto:)([^)\s#]+?)\.html(?:#[^)]*)?\)')) {
+        $target = $m.Groups[1].Value.TrimStart('/')
+        if (-not $internalLinks.ContainsKey($target)) { $internalLinks[$target] = @() }
+        $internalLinks[$target] += $f.Name
+    }
 
     # Note which references this page cites, so a shrinking .bib can be caught.
     foreach ($m in [regex]::Matches($body, '\[@([A-Za-z0-9_:.\-]+(?:\s*;\s*@[A-Za-z0-9_:.\-]+)*)\]')) {
@@ -331,6 +356,25 @@ Get-ChildItem (Join-Path $root 'tags') -Filter 'tag_*.md' -ErrorAction SilentlyC
         if (-not $Check) { Remove-Item $_.FullName }
         $changed += "removed tags\$($_.Name)"
     }
+}
+
+# ------------------------------------------------------- broken page links ---
+
+$knownPages = New-Object System.Collections.Generic.HashSet[string]
+foreach ($e in $entries) { [void]$knownPages.Add($e.Slug) }
+[void]$knownPages.Add('index')
+[void]$knownPages.Add('tag_index')
+[void]$knownPages.Add('404')
+foreach ($t in $tagList) { [void]$knownPages.Add("tag_$t") }
+
+$deadLinks = $internalLinks.Keys | Where-Object { -not $knownPages.Contains($_) } | Sort-Object
+if ($deadLinks) {
+    Write-Host ""
+    Write-Host "!! LINK KE HALAMAN YANG TIDAK ADA :" -ForegroundColor Red
+    foreach ($l in $deadLinks) {
+        Write-Host ("   {0}.html  ditaut dari: {1}" -f $l, (($internalLinks[$l] | Sort-Object -Unique) -join ', ')) -ForegroundColor Red
+    }
+    Write-Host "   Catatannya mungkin baru diganti nama — perbarui tautannya." -ForegroundColor Yellow
 }
 
 # ------------------------------------------------- cited-but-missing keys ----

@@ -24,8 +24,8 @@ entries:
     output: web
     folderitems:
 
-    - title: 001 — Sistem Nonlinier
-      url: /001-sistem-nonlinier.html
+    - title: 001 — Sistem Nonlinier Control
+      url: /001-sistem-nonlinier-control-affine.html
       output: web
 
   - title: Example

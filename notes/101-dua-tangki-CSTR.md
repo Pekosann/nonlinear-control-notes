@@ -1,7 +1,7 @@
 ---
 title: "101 — Dua Tangki CSTR"
 section: Example
-tags: [cstr]
+tags: [cstr, control-affine]
 summary: "Model dua CSTR seri dengan pendingin cocurrent — persamaan model dari Henson & Seborg (1990)."
 permalink: /101-dua-tangki-CSTR.html
 folder: notes
@@ -104,7 +104,7 @@ $$
 
 ### Kenapa bukan $\dot{x} = f(x) + g(x)u$
 
-Di [001 — Sistem Nonlinier](001-sistem-nonlinier.html) bentuk umum yang dipakai adalah *control-affine*:
+Di [001 — Sistem Nonlinier Control-Affine](001-sistem-nonlinier-control-affine.html) bentuk umum yang dipakai adalah *control-affine*:
 $\dot{x} = f(x) + g(x)u$, yaitu $u$ masuk secara linier. Sistem ini **tidak**
 bisa ditulis begitu.
 
