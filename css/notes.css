@@ -39,6 +39,32 @@ blockquote {
   margin-top: -0.6em;
 }
 
+/* Citations and reference list (see _plugins/bibliography.rb) */
+a.cite {
+  font-weight: 600;
+  text-decoration: none;
+}
+a.cite:before { content: ""; }
+ol.bibliography {
+  font-size: 15px;
+  line-height: 1.6;
+  padding-left: 22px;
+}
+ol.bibliography li {
+  margin-bottom: 0.6em;
+  padding-left: 4px;
+}
+ol.bibliography li:target {
+  background-color: #fff6d5;
+}
+ol.bibliography a {
+  word-break: break-word;
+}
+.cite-missing {
+  color: #a94442;
+  font-style: italic;
+}
+
 /* Note index table on the home page */
 table.note-index td:first-child {
   white-space: nowrap;

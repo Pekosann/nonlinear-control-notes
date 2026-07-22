@@ -96,6 +96,41 @@ dengan $x \in \mathbb{R}^n$.
 
 Makro tambahan yang tersedia: `\RR` (= `\mathbb{R}`), `\dd`, `\pmatrix{...}`, `\bmatrix{...}`.
 
+## Sitasi & referensi
+
+Export library Zotero-mu ke **`_bibliography/references.bib`** (BibTeX atau BibLaTeX
+sama saja). Lalu di catatan tulis kunci sitasinya dalam kurung siku:
+
+```markdown
+Metode ini diperkenalkan oleh [@henson1990].
+Buku teks standarnya [@seborg]. Dua sekaligus: [@henson1990; @guan2023].
+```
+
+Hasilnya:
+
+```
+Metode ini diperkenalkan oleh [1]. Buku teks standarnya [2]. Dua sekaligus: [1, 3].
+
+## Referensi
+1. Henson, M. A. & Seborg, D. E. (1990). Input‐output Linearization of General
+   Nonlinear Processes. AIChE Journal, 36(11), 1753–1757. https://doi.org/...
+2. Seborg, D. E. (n.d.). Process Dynamics and Control.
+3. Guan, H., Ye, L., ... (2023). Dynamic Modeling and Sensitivity Analysis ...
+```
+
+- Nomor diberikan **per halaman**, urut sesuai kemunculan pertama. Kunci yang sama
+  dipakai dua kali tetap dapat nomor yang sama.
+- Daftar **Referensi** ditambahkan otomatis di bawah halaman — hanya di halaman
+  yang memang menyitasi sesuatu.
+- Kunci yang tidak ada di `.bib` tetap tampil (dengan teks merah) dan memunculkan
+  peringatan kuning waktu build, jadi salah ketik ketahuan.
+- `_bibliography/` tidak ikut dipublish, jadi path Zotero lokal di field `file = {...}`
+  tidak bocor ke internet. **Jangan taruh `.bib` di `notes/`** — folder itu ikut dipublish.
+
+Mesinnya ada di `_plugins/bibliography.rb`. Plugin Jekyll hanya jalan karena situs ini
+dibangun lewat GitHub Actions sendiri, bukan build bawaan GitHub Pages (yang mode-nya
+aman dan mengabaikan `_plugins/`). Jangan pindah ke "Deploy from a branch".
+
 ## Gambar
 
 Taruh file di `figures\`, lalu tulis salah satu:
@@ -125,6 +160,8 @@ Daftar isi halaman muncul otomatis; matikan dengan `toc: false` di front matter.
 ```
 notes\          ← TULISANMU ADA DI SINI
 figures\        ← gambar
+_bibliography\  ← references.bib dari Zotero (tidak dipublish)
+_plugins\       ← mesin sitasi [@key]
 tags\           ← halaman tag (dibuat otomatis oleh sync)
 _data\sidebars\ ← sidebar (dibuat otomatis oleh sync)
 _archive\       ← draft lama, tidak ikut dipublish
