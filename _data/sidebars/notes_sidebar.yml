@@ -28,6 +28,10 @@ entries:
       url: /001-sistem-nonlinier-control-affine.html
       output: web
 
+    - title: 002 — Sistem Nonlinier Umum
+      url: /002-sistem-nonlinier.html
+      output: web
+
   - title: Example
     output: web
     folderitems:
