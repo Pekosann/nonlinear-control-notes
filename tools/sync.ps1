@@ -69,11 +69,24 @@ function Convert-Math([string[]]$lines) {
 }
 
 # ------------------------------------------------------- scrub .bib files ----
+# A .bib dropped in notes\ would be published verbatim by Jekyll (and its Zotero
+# file = {...} paths with it), and the citation plugin would not even see it —
+# it only reads _bibliography\. So move any stray .bib there first.
+
+$bibDir = Join-Path $root '_bibliography'
+foreach ($stray in (Get-ChildItem $notesDir -Filter *.bib -ErrorAction SilentlyContinue)) {
+    if (-not (Test-Path $bibDir)) {
+        if (-not $Check) { New-Item -ItemType Directory $bibDir | Out-Null }
+    }
+    $dest = Join-Path $bibDir $stray.Name
+    if (-not $Check) { Move-Item $stray.FullName $dest -Force }
+    $changed += "moved notes\$($stray.Name) -> _bibliography\  (notes\ is published; _bibliography\ is not)"
+}
+
 # Zotero writes  file = {C:\Users\<you>\Zotero\storage\...}  into every entry.
 # The repo is public and nothing renders that field, so strip it on every sync —
 # otherwise each re-export from Zotero puts your username back in the repo.
 
-$bibDir = Join-Path $root '_bibliography'
 if (Test-Path $bibDir) {
     foreach ($bib in (Get-ChildItem $bibDir -Filter *.bib)) {
         $text = [IO.File]::ReadAllText($bib.FullName)

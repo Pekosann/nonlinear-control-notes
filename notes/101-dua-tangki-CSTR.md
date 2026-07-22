@@ -1,28 +1,49 @@
 ---
-title: 101 — Dua Tangki CSTR
+title: "101 — Dua Tangki CSTR"
 section: Example
-tags: []
-summary: Bentuk umum sistem nonlinier affine-in-control, dan kenapa sistem linier hanyalah kasus spesialnya.
+tags: [cstr]
+summary: "Model dua CSTR seri dengan pendingin cocurrent — persamaan 24–28 dari Henson & Seborg (1990)."
 permalink: /101-dua-tangki-CSTR.html
 folder: notes
 last_updated: Jul 22, 2026
 ---
 
-test
-Misalkan sebuah sistem dapat dibentuk menjadi persamaan *nonlinear differential* dengan bentuk:
-$$\dot{x}=f(x)+g(x)u\quad (1)$$
-$$y=h(x)\quad(2)$$
-memiliki *internal state* $$x=(x_1,x_2,...,x_n)\in\mathbb{R}^n$$
-*control input* $$u\in\mathbb{R}$$
-dan *measured output* $$y\in\mathbb{R}$$
-dan fungsi $$f:\mathbb{R}^n\rightarrow\mathbb{R}^n$$ dan $$g:\mathbb{R}^n\rightarrow\mathbb{R}^n$$
-sedangkan $$h:\mathbb{R}^n\rightarrow\mathbb{R}$$ adalah fungsi output skalar.
+Dua CSTR terpasang seri, didinginkan oleh satu aliran pendingin yang mengalir
+*cocurrent* (searah dengan aliran proses). Reaksi eksotermik ireversibel $$A \to B$$
+terjadi di kedua tangki [@henson1990].
 
->simbol $$f:\mathbb{R}^n\rightarrow\mathbb{R}^n$$ adalah kependekan dari:
->$$f(x)=\pmatrix{f_1(x_1,x_2,...,x_n)\\f_2(x_1,x_2,...,x_n)\\...\\f_n(x_1,x_2,...,x_n)}$$
->berarti f adalah sebuah fungsi matrix yang mengubah x sebanyak n menjadi bentuk lain yang juga sebanyak n.
+## Model Proses (Pers. 24–27)
 
-Kasus spesial dari sistem nonlinear adalah sistem linear. Bentuknya berupa:
-$$\dot{x}=Ax+Bu\quad (3)$$
-$$y=Cx\quad(4)$$
-Persamaan ini yang biasa kita gunakan dalam membentuk *transfer function* dengan metode transformasi Laplace. Dengan ini, semakin jelas apa yang sebenarnya terjadi ketika kita melakukan linierisasi pada persamaan nonlinier menjadi bentuk aproksimasi liniernya. Limitasi dari melakukan aproksimasi linierisasi menjadi sangat besar ketika persamaan sangat jauh dari bentuk linier. Karena itu juga, *transfer function* hanya dapat dibentuk dari bentuk sistem linier.
+$$
+\begin{align}
+\dot{C}_{A1} &= \frac{q}{V_1}(C_{Af} - C_{A1}) - k_0 C_{A1} \exp\!\left(-\frac{E}{RT_1}\right) \tag{24}\\[8pt]
+\dot{T}_1 &= \frac{q}{V_1}(T_f - T_1) + \frac{(-\Delta H)\,k_0\,C_{A1}}{\rho C_p}\exp\!\left(-\frac{E}{RT_1}\right) \notag\\
+&\quad + \frac{\rho_c C_{pc}}{\rho C_p V_1}\,q_c\left[1 - \exp\!\left(-\frac{hA_1}{q_c\,\rho_c\,C_{pc}}\right)\right](T_{cf} - T_1) \tag{25}\\[8pt]
+\dot{C}_{A2} &= \frac{q}{V_2}(C_{A1} - C_{A2}) - k_0 C_{A2} \exp\!\left(-\frac{E}{RT_2}\right) \tag{26}\\[8pt]
+\dot{T}_2 &= \frac{q}{V_2}(T_1 - T_2) + \frac{(-\Delta H)\,k_0\,C_{A2}}{\rho C_p}\exp\!\left(-\frac{E}{RT_2}\right) \notag\\
+&\quad + \frac{\rho_c C_{pc}}{\rho C_p V_2}\,q_c\left[1 - \exp\!\left(-\frac{hA_2}{q_c\,\rho_c\,C_{pc}}\right)\right]\notag\\
+&\quad\cdot\left[T_1 - T_2 + \exp\!\left(-\frac{hA_1}{q_c\,\rho_c\,C_{pc}}\right)(T_{cf} - T_1)\right] \tag{27}
+\end{align}
+$$
+
+### Catatan untuk Pers. 27
+
+Temperatur pendingin yang masuk ke jaket kedua **bukan** $$T_{cf}$$, melainkan
+temperatur keluar pendingin dari jaket pertama. Untuk aliran *cocurrent*,
+temperatur pendingin setelah tangki 1 adalah:
+
+$$
+T_{c,\text{out},1} = T_1 + \exp\!\left(-\frac{hA_1}{q_c\,\rho_c\,C_{pc}}\right)(T_{cf} - T_1)
+$$
+
+Inilah temperatur pendingin masuk untuk tangki 2. Jadi suku dalam kurung siku di
+Pers. 27 sebenarnya adalah $$T_{c,\text{out},1} - T_2$$.
+
+## Definisi State, Input, Gangguan, dan Output (Pers. 28)
+
+$$
+x \triangleq [C_{A1},\; T_1,\; C_{A2},\; T_2]^T, \quad
+d \triangleq [C_{Af},\; T_{cf}]^T, \quad
+u \triangleq q_c, \quad
+y \triangleq C_{A2} \tag{28}
+$$
