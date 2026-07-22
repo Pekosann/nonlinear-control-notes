@@ -30,11 +30,28 @@ if (-not $Message) {
 
 git add -A
 $staged = git diff --cached --name-only
-if (-not $staged) { Write-Host "Nothing to commit." -ForegroundColor Yellow; return }
+if ($staged) {
+    git commit -m $Message
+    if ($LASTEXITCODE -ne 0) { throw "git commit failed." }
+} else {
+    Write-Host "Nothing new to commit — pushing existing commits." -ForegroundColor Yellow
+}
 
-git commit -m $Message
-git push
+# First push on a fresh repo needs -u to create the upstream branch; without it
+# git errors with "the current branch main has no upstream branch".
+$branch = (git rev-parse --abbrev-ref HEAD).Trim()
+$hasUpstream = $null -ne (git rev-parse --abbrev-ref "$branch@{upstream}" 2>$null)
+if ($hasUpstream) { git push } else { git push -u origin $branch }
+
+if ($LASTEXITCODE -ne 0) {
+    Write-Host ""
+    Write-Host "PUSH FAILED — nothing reached GitHub." -ForegroundColor Red
+    Write-Host "Check that https://github.com/Pekosann/nonlinear-control-notes exists" -ForegroundColor Red
+    Write-Host "and that you are signed in to GitHub in Git Credential Manager." -ForegroundColor Red
+    throw "git push failed."
+}
 
 Write-Host ""
 Write-Host "Pushed. Build status: https://github.com/Pekosann/nonlinear-control-notes/actions" -ForegroundColor Cyan
 Write-Host "Live site:            https://pekosann.github.io/nonlinear-control-notes/" -ForegroundColor Cyan
+Write-Host "(first deploy takes ~1-2 minutes)" -ForegroundColor DarkGray
