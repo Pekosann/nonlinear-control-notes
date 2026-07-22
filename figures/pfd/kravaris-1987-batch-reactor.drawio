@@ -1,0 +1,137 @@
+<mxGraphModel dx="1300" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="820" math="0" shadow="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <mxCell id="title" value="Kravaris &amp; Chung (1987) — Jacketed batch reactor with internal cooling coil" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="100" y="18" width="950" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="subtitle" value="Consecutive exothermic reactions A &#8594; B &#8594; C · liquid phase · no continuous feed or product" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="100" y="46" width="950" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jacket" style="edgeStyle=none;html=1;rounded=0;endArrow=none;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="364" y="228" as="sourcePoint"/>
+        <mxPoint x="636" y="228" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="364" y="510"/>
+          <mxPoint x="636" y="510"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="vessel" value="" style="shape=mxgraph.pid.vessels.tank;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2.5;" vertex="1" parent="1">
+      <mxGeometry x="380" y="200" width="240" height="300" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="shaft" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="500" y="158" as="sourcePoint"/>
+        <mxPoint x="500" y="330" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="motor" value="M" style="ellipse;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="480" y="126" width="40" height="32" as="geometry"/>
+    </mxCell>
+    <mxCell id="agit" value="" style="shape=mxgraph.pid.agitators.agitator_(propeller);html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="472" y="292" width="56" height="46" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="coil" style="edgeStyle=none;html=1;rounded=0;endArrow=none;strokeColor=#1f6fb2;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="622" y="366" as="sourcePoint"/>
+        <mxPoint x="622" y="462" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="412" y="366"/>
+          <mxPoint x="412" y="398"/>
+          <mxPoint x="596" y="398"/>
+          <mxPoint x="596" y="430"/>
+          <mxPoint x="412" y="430"/>
+          <mxPoint x="412" y="462"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="steamin" value="saturated steam" style="edgeStyle=none;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2;fontSize=12;fontColor=#c0392b;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="150" y="262" as="sourcePoint"/>
+        <mxPoint x="364" y="262" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="steamlab" value="pressure regulated&#160;&#8594;&#160;T&lt;sub&gt;s&lt;/sub&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="152" y="272" width="200" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="cond" value="condensate" style="edgeStyle=none;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2;fontSize=12;fontColor=#c0392b;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="364" y="486" as="sourcePoint"/>
+        <mxPoint x="150" y="486" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="coolin" value="coolant&#160; F&lt;sub&gt;c&lt;/sub&gt;" style="edgeStyle=none;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#1f6fb2;strokeWidth=2;fontSize=12;fontColor=#1f6fb2;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="880" y="366" as="sourcePoint"/>
+        <mxPoint x="622" y="366" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="coollab" value="T&lt;sub&gt;c&lt;/sub&gt; = 25 &#176;C" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#1f6fb2;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="740" y="376" width="140" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="coolout" value="coolant return" style="edgeStyle=none;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#1f6fb2;strokeWidth=2;fontSize=12;fontColor=#1f6fb2;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="622" y="462" as="sourcePoint"/>
+        <mxPoint x="880" y="462" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="charge" value="charge" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#999999;strokeWidth=1.5;dashed=1;fontSize=11;fontColor=#999999;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="250" y="150" as="sourcePoint"/>
+        <mxPoint x="424" y="212" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="424" y="150"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="disch" value="discharge" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#999999;strokeWidth=1.5;dashed=1;fontSize=11;fontColor=#999999;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="500" y="500" as="sourcePoint"/>
+        <mxPoint x="500" y="580" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="inner" value="&lt;b&gt;Batch reactor&lt;/b&gt;&lt;br&gt;V&lt;br&gt;C&lt;sub&gt;A&lt;/sub&gt;, C&lt;sub&gt;B&lt;/sub&gt;, T&lt;br&gt;A &#8594; B &#8594; C" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="396" y="228" width="130" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jlab" value="jacket&#10;T&lt;sub&gt;s&lt;/sub&gt;, U&lt;sub&gt;j&lt;/sub&gt;, A&lt;sub&gt;j&lt;/sub&gt;" style="text;html=1;align=right;verticalAlign=middle;fontSize=12;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="196" y="352" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="jlead" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="346" y="372" as="sourcePoint"/>
+        <mxPoint x="372" y="372" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="clab" value="cooling coil&#10;T&lt;sub&gt;c&lt;/sub&gt;, U&lt;sub&gt;c&lt;/sub&gt;, A&lt;sub&gt;c&lt;/sub&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=12;fontColor=#1f6fb2;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="676" y="404" width="150" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="clead" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#1f6fb2;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="596" y="414" as="sourcePoint"/>
+        <mxPoint x="672" y="424" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="note" value="&lt;b&gt;Heat input&lt;/b&gt; is set by regulating saturated-steam pressure, hence jacket temperature T&lt;sub&gt;s&lt;/sub&gt;.&#10;&lt;b&gt;Heat removal&lt;/b&gt; is set by the coolant flow rate F&lt;sub&gt;c&lt;/sub&gt;, which fixes the coil coefficient U&lt;sub&gt;c&lt;/sub&gt;:&#160; 1/U&lt;sub&gt;c&lt;/sub&gt; = 1/(4550 F&lt;sub&gt;c&lt;/sub&gt;&lt;sup&gt;0.8&lt;/sup&gt;) + 1/10.8&#10;&#961;C&lt;sub&gt;p&lt;/sub&gt;V dT/dt = k&lt;sub&gt;1&lt;/sub&gt;C&lt;sub&gt;A&lt;/sub&gt;&#178;(&#8722;&#916;H&lt;sub&gt;1&lt;/sub&gt;)V + k&lt;sub&gt;2&lt;/sub&gt;C&lt;sub&gt;B&lt;/sub&gt;(&#8722;&#916;H&lt;sub&gt;2&lt;/sub&gt;)V + U&lt;sub&gt;j&lt;/sub&gt;A&lt;sub&gt;j&lt;/sub&gt;(T&lt;sub&gt;s&lt;/sub&gt; &#8722; T) &#8722; U&lt;sub&gt;c&lt;/sub&gt;A&lt;sub&gt;c&lt;/sub&gt;(T &#8722; T&lt;sub&gt;c&lt;/sub&gt;)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="100" y="620" width="800" height="76" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="caveat" value="A&lt;sub&gt;j&lt;/sub&gt;/V = 30 m&#8315;&#185;, A&lt;sub&gt;c&lt;/sub&gt;/V = 17 m&#8315;&#185;. Reactor volume, vessel dimensions and coil geometry are not specified in the paper.&#10;The paper gives no process schematic; this diagram is composed from its text. Grey dashed nozzles (charge, discharge) and the agitator are inferred, not stated." style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontColor=#777777;strokeColor=none;fillColor=none;spacing=4;" vertex="1" parent="1">
+      <mxGeometry x="100" y="708" width="880" height="46" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

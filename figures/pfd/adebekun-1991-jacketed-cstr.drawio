@@ -1,0 +1,100 @@
+<mxGraphModel dx="1300" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1150" pageHeight="800" math="0" shadow="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <mxCell id="title" value="Adebekun &amp; Schork (1991) — Jacketed CSTR, n&lt;sup&gt;th&lt;/sup&gt;-order exothermic reaction" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="100" y="18" width="950" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="subtitle" value="Constant volume · perfectly mixed · non-isothermal · reaction order n &#8712; [0, &#8734;)" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="100" y="46" width="950" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jacket" style="edgeStyle=none;html=1;rounded=0;endArrow=none;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="384" y="238" as="sourcePoint"/>
+        <mxPoint x="636" y="238" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="384" y="500"/>
+          <mxPoint x="636" y="500"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="vessel" value="" style="shape=mxgraph.pid.vessels.tank;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2.5;" vertex="1" parent="1">
+      <mxGeometry x="400" y="210" width="220" height="280" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="shaft" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="530" y="168" as="sourcePoint"/>
+        <mxPoint x="530" y="352" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="motor" value="M" style="ellipse;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="510" y="136" width="40" height="32" as="geometry"/>
+    </mxCell>
+    <mxCell id="agit" value="" style="shape=mxgraph.pid.agitators.agitator_(propeller);html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="502" y="314" width="56" height="46" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="feed" value="F&#160;&#160; c&lt;sub&gt;af&lt;/sub&gt;&#160;&#160; T&lt;sub&gt;f&lt;/sub&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="130" y="150" as="sourcePoint"/>
+        <mxPoint x="452" y="224" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="452" y="150"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="feedlab" value="feed" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="132" y="160" width="80" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="prod" value="F&#160;&#160; c&lt;sub&gt;a&lt;/sub&gt;&#160;&#160; T" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="570" y="490" as="sourcePoint"/>
+        <mxPoint x="940" y="590" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="570" y="590"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="prodlab" value="product" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="860" y="600" width="80" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="inner" value="&lt;b&gt;CSTR&lt;/b&gt;&lt;br&gt;V&lt;br&gt;c&lt;sub&gt;a&lt;/sub&gt;, T&lt;br&gt;rate &#8733; c&lt;sub&gt;a&lt;/sub&gt;&lt;sup&gt;n&lt;/sup&gt;, exothermic" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="414" y="240" width="170" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jlab" value="jacket&#10;T&lt;sub&gt;c&lt;/sub&gt;&#160;&#160;(heat-transfer area A, coefficient h)" style="text;html=1;align=right;verticalAlign=middle;fontSize=12;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="90" y="356" width="270" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="jlead" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="364" y="376" as="sourcePoint"/>
+        <mxPoint x="392" y="376" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="jnote" value="The jacket is modelled as a &lt;b&gt;single lumped temperature T&lt;sub&gt;c&lt;/sub&gt;&lt;/b&gt;.&#10;The paper defines no coolant flow rate and no separate&#10;jacket inlet/outlet, so no flow direction is implied." style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#c0392b;strokeColor=#e8c4bf;fillColor=#fdf3f2;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="700" y="250" width="340" height="66" as="geometry"/>
+    </mxCell>
+    <mxCell id="jnlead" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="644" y="300" as="sourcePoint"/>
+        <mxPoint x="696" y="292" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="eqn" value="&#7819;&#8321; = &#8722;x&#8321; + Da(1&#8722;x&#8321;)&#8319; exp[x&#8322;/(1+x&#8322;/&#947;)]&#10;&#7819;&#8322; = &#8722;x&#8322; + B&#183;Da(1&#8722;x&#8321;)&#8319; exp[x&#8322;/(1+x&#8322;/&#947;)] &#8722; &#946;(x&#8322; &#8722; x&lt;sub&gt;2c&lt;/sub&gt;) + &#946;u + d&#10;x&#8321; = (c&lt;sub&gt;af&lt;/sub&gt; &#8722; c&lt;sub&gt;a&lt;/sub&gt;)/c&lt;sub&gt;af&lt;/sub&gt; &#160;(conversion)&#160;&#160;&#160;&#160;x&#8322; = &#947;(T &#8722; T&lt;sub&gt;f0&lt;/sub&gt;)/T&lt;sub&gt;f0&lt;/sub&gt; &#160;(temperature)&#10;&#946; = hA/(F&#961;c&lt;sub&gt;p&lt;/sub&gt;)&#160;&#160;&#160;&#160;Da = k&#8320;Ve&lt;sup&gt;&#8722;&#947;&lt;/sup&gt;/F&#160;&#160;&#160;&#160;&#947; = E/(RT&lt;sub&gt;f0&lt;/sub&gt;)&#160;&#160;&#160;&#160;B = (&#8722;&#916;H)c&lt;sub&gt;af&lt;/sub&gt;&#947;/(&#961;c&lt;sub&gt;p&lt;/sub&gt;T&lt;sub&gt;f0&lt;/sub&gt;)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="100" y="640" width="700" height="92" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="caveat" value="The paper works entirely in &lt;b&gt;dimensionless variables&lt;/b&gt; and assigns no units to F, c&lt;sub&gt;af&lt;/sub&gt;, V, T, A or h; none are printed here.&#10;It gives no numerical parameter values and contains no process schematic &#8212; this diagram is composed from its text and nomenclature." style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontColor=#777777;strokeColor=none;fillColor=none;spacing=4;" vertex="1" parent="1">
+      <mxGeometry x="100" y="744" width="940" height="44" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

@@ -1,0 +1,162 @@
+<mxGraphModel dx="1300" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="740" math="0" shadow="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <mxCell id="title" value="Maidi, Diaf &amp; Corriou (2009) — Tubular counter-current heat exchanger" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="120" y="18" width="960" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="subtitle" value="Pure heat transfer, no reaction · distributed parameter, two coupled hyperbolic PDEs · L = 1 m" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="120" y="46" width="960" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jacketband" value="" style="rounded=0;html=1;fillColor=#fdecea;strokeColor=none;" vertex="1" parent="1">
+      <mxGeometry x="240" y="300" width="720" height="180" as="geometry"/>
+    </mxCell>
+    <mxCell id="tubeband" value="" style="rounded=0;html=1;fillColor=#dceaf7;strokeColor=none;" vertex="1" parent="1">
+      <mxGeometry x="240" y="360" width="720" height="60" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jouter1" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="300" as="sourcePoint"/>
+        <mxPoint x="960" y="300" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="jouter2" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="480" as="sourcePoint"/>
+        <mxPoint x="960" y="480" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="jcapL" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="300" as="sourcePoint"/>
+        <mxPoint x="240" y="480" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="jcapR" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="960" y="300" as="sourcePoint"/>
+        <mxPoint x="960" y="480" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="tube1" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#000000;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="150" y="360" as="sourcePoint"/>
+        <mxPoint x="1050" y="360" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="tube2" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#000000;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="150" y="420" as="sourcePoint"/>
+        <mxPoint x="1050" y="420" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="procarrow" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#1f6fb2;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="520" y="390" as="sourcePoint"/>
+        <mxPoint x="700" y="390" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="proclab" value="T(z,t)&#160;&#160; v = 1 m/s" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontColor=#1f6fb2;strokeColor=none;fillColor=none;labelBackgroundColor=#dceaf7;" vertex="1" parent="1">
+      <mxGeometry x="300" y="378" width="200" height="24" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jetarrow" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="700" y="330" as="sourcePoint"/>
+        <mxPoint x="520" y="330" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="jetlab" value="T&lt;sub&gt;e&lt;/sub&gt;(z,t)&#160;&#160; v&lt;sub&gt;e&lt;/sub&gt; = 2 m/s" style="text;html=1;align=center;verticalAlign=middle;fontSize=13;fontColor=#c0392b;strokeColor=none;fillColor=none;labelBackgroundColor=#fdecea;" vertex="1" parent="1">
+      <mxGeometry x="720" y="318" width="210" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="jetarrow2" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="700" y="450" as="sourcePoint"/>
+        <mxPoint x="520" y="450" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="tin" value="T&lt;sub&gt;0&lt;/sub&gt;(t)" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2.5;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="60" y="390" as="sourcePoint"/>
+        <mxPoint x="160" y="390" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="tinlab" value="internal fluid in&#10;25 &#176;C (disturbance)" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="40" y="400" width="150" height="34" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="tout" value="T&lt;sub&gt;L&lt;/sub&gt;(t) = T(L,t)" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2.5;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="1040" y="390" as="sourcePoint"/>
+        <mxPoint x="1150" y="390" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="toutlab" value="internal fluid out&#10;44.57 &#176;C at steady state" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="1000" y="400" width="190" height="34" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="tein" value="T&lt;sub&gt;e&lt;sub&gt;L&lt;/sub&gt;&lt;/sub&gt;(t)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="900" y="200" as="sourcePoint"/>
+        <mxPoint x="900" y="296" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="teinlab" value="external fluid in at z = L&#10;50 &#176;C" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="790" y="152" width="220" height="34" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="teout" value="T&lt;sub&gt;e&lt;/sub&gt;(0,t)" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="300" y="296" as="sourcePoint"/>
+        <mxPoint x="300" y="200" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="teoutlab" value="external fluid out at z = 0&#10;33.18 &#176;C at steady state" style="text;html=1;align=center;verticalAlign=middle;fontSize=11;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="190" y="152" width="220" height="34" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="zguideL" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#999999;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="486" as="sourcePoint"/>
+        <mxPoint x="240" y="560" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="zguideR" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#999999;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="960" y="486" as="sourcePoint"/>
+        <mxPoint x="960" y="560" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="zruler" value="axial coordinate&#160; z&#160;&#160;[m]" style="edgeStyle=none;html=1;endArrow=classic;startArrow=classic;endFill=1;startFill=1;strokeColor=#333333;strokeWidth=1.5;fontSize=12;labelBackgroundColor=#ffffff;verticalAlign=bottom;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="545" as="sourcePoint"/>
+        <mxPoint x="960" y="545" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="z0" value="z = 0" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontStyle=2;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="200" y="552" width="80" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="zL" value="z = L = 1 m" style="text;html=1;align=center;verticalAlign=top;fontSize=12;fontStyle=2;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="900" y="552" width="120" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="ccnote" value="&lt;b&gt;Counter-current&lt;/b&gt;: internal fluid flows in +z, external fluid in &#8722;z.&#10;The jacket inlet at z = L is co-located with the outlet measurement T(L,t)." style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="120" y="600" width="450" height="52" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="eqn" value="&#8706;T/&#8706;t&#160;&#160; = &#8722;v &#8706;T/&#8706;z&#160;&#160; + a (T&lt;sub&gt;e&lt;/sub&gt; &#8722; T),&#160;&#160;&#160; a&#160;&#160;= 2.92 s&#8315;&#185;,&#160; T(0,t) = T&lt;sub&gt;0&lt;/sub&gt;(t)&#10;&#8706;T&lt;sub&gt;e&lt;/sub&gt;/&#8706;t = +v&lt;sub&gt;e&lt;/sub&gt; &#8706;T&lt;sub&gt;e&lt;/sub&gt;/&#8706;z + a&lt;sub&gt;e&lt;/sub&gt;(T &#8722; T&lt;sub&gt;e&lt;/sub&gt;),&#160;&#160;&#160; a&lt;sub&gt;e&lt;/sub&gt; = 5 s&#8315;&#185;,&#160;&#160;&#160; T&lt;sub&gt;e&lt;/sub&gt;(L,t) = T&lt;sub&gt;e&lt;sub&gt;L&lt;/sub&gt;&lt;/sub&gt;(t)" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="600" y="600" width="500" height="52" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="caveat" value="Only the lumped groups a and a&lt;sub&gt;e&lt;/sub&gt; are given numerically; cross-sections S, S&lt;sub&gt;e&lt;/sub&gt;, the transfer area and the individual densities, heat capacities and film coefficients are not specified in the paper, nor are any diameters.&#10;The jacket is a continuous distributed annulus &#8212; the paper defines no jacket zones. Utility is a liquid or non-condensing vapour, not condensing steam." style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontColor=#777777;strokeColor=none;fillColor=none;spacing=4;" vertex="1" parent="1">
+      <mxGeometry x="120" y="666" width="980" height="46" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

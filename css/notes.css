@@ -1,0 +1,45 @@
+/* Tweaks on top of the Jekyll documentation theme, for math-heavy notes. */
+
+/* Long display equations scroll instead of overflowing the column. */
+.math-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0;
+}
+mjx-container[display="true"] {
+  margin: 0.9em 0 !important;
+}
+
+/* The theme's default line-height is tight for text with inline math. */
+.post-content p,
+#main li {
+  line-height: 1.65;
+}
+
+/* Blockquotes used as "side remarks" in the notes. */
+blockquote {
+  font-size: 15px;
+  border-left: 4px solid #d8d8d8;
+  background-color: #fafafa;
+  color: #444;
+}
+
+/* Figures */
+#main img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.2em auto;
+}
+#main img + em {
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-top: -0.6em;
+}
+
+/* Note index table on the home page */
+table.note-index td:first-child {
+  white-space: nowrap;
+}

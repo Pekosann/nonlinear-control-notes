@@ -1,0 +1,191 @@
+<mxGraphModel dx="1300" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1250" pageHeight="780" math="0" shadow="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <mxCell id="title" value="Christofides &amp; Daoutidis (1996) — Nonisothermal plug-flow reactor with five jacket zones" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="100" y="18" width="1050" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="subtitle" value="Series reactions A &#8594; B &#8594; C, both endothermic &#183; jacket supplies heat &#183; L = 1 m, V&lt;sub&gt;r&lt;/sub&gt; = 10 lt, v&lt;sub&gt;l&lt;/sub&gt; = 1 m/min" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="100" y="46" width="1050" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="jband" value="" style="rounded=0;html=1;fillColor=#fdecea;strokeColor=#c0392b;strokeWidth=2.5;" vertex="1" parent="1">
+      <mxGeometry x="240" y="280" width="700" height="210" as="geometry"/>
+    </mxCell>
+    <mxCell id="tubefill" value="" style="rounded=0;html=1;fillColor=#ffffff;strokeColor=#000000;strokeWidth=2.5;" vertex="1" parent="1">
+      <mxGeometry x="240" y="350" width="700" height="70" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="d1" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=1.5;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="380" y="280" as="sourcePoint"/>
+        <mxPoint x="380" y="490" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="d2" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=1.5;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="520" y="280" as="sourcePoint"/>
+        <mxPoint x="520" y="490" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="d3" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=1.5;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="660" y="280" as="sourcePoint"/>
+        <mxPoint x="660" y="490" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="d4" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#c0392b;strokeWidth=1.5;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="800" y="280" as="sourcePoint"/>
+        <mxPoint x="800" y="490" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="rxn" value="A &#8594; B &#8594; C" style="text;html=1;align=center;verticalAlign=middle;fontSize=16;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="490" y="372" width="200" height="26" as="geometry"/>
+    </mxCell>
+    <mxCell id="flow" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#1f6fb2;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="280" y="385" as="sourcePoint"/>
+        <mxPoint x="450" y="385" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="flow2" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#1f6fb2;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="730" y="385" as="sourcePoint"/>
+        <mxPoint x="900" y="385" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="tj1" value="T&lt;sub&gt;j&lt;/sub&gt;&lt;sup&gt;1&lt;/sup&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="270" y="300" width="80" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="tj2" value="T&lt;sub&gt;j&lt;/sub&gt;&lt;sup&gt;2&lt;/sup&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="410" y="300" width="80" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="tj3" value="T&lt;sub&gt;j&lt;/sub&gt;&lt;sup&gt;3&lt;/sup&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="550" y="300" width="80" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="tj4" value="T&lt;sub&gt;j&lt;/sub&gt;&lt;sup&gt;4&lt;/sup&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="690" y="300" width="80" height="24" as="geometry"/>
+    </mxCell>
+    <mxCell id="tj5" value="T&lt;sub&gt;j&lt;/sub&gt;&lt;sup&gt;5&lt;/sup&gt;" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="830" y="300" width="80" height="24" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="f1" value="F&lt;sub&gt;js&lt;/sub&gt; = 28.87" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="250" y="452" width="120" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="f2" value="43.66" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="410" y="452" width="80" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="f3" value="59.63" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="550" y="452" width="80" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="f4" value="72.34" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="690" y="452" width="80" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="f5" value="77.23 lt/min" style="text;html=1;align=center;verticalAlign=middle;fontSize=10;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="820" y="452" width="110" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="a1" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="310" y="200" as="sourcePoint"/>
+        <mxPoint x="310" y="276" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="a2" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="450" y="200" as="sourcePoint"/>
+        <mxPoint x="450" y="276" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="a3" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="590" y="200" as="sourcePoint"/>
+        <mxPoint x="590" y="276" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="a4" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="730" y="200" as="sourcePoint"/>
+        <mxPoint x="730" y="276" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="a5" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#c0392b;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="870" y="200" as="sourcePoint"/>
+        <mxPoint x="870" y="276" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="heatlab" value="heating medium in,&#160; T&lt;sub&gt;j0&lt;/sub&gt; = 350 K&#160; (liquid, not steam)" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#c0392b;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="420" y="168" width="360" height="24" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="feed" value="" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="60" y="385" as="sourcePoint"/>
+        <mxPoint x="236" y="385" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="feedvals" value="C&lt;sub&gt;A0&lt;/sub&gt; = 4.0 mol/lt&#10;C&lt;sub&gt;B0&lt;/sub&gt; = 0.0 mol/lt&#10;T&lt;sub&gt;A0&lt;/sub&gt; = 320 K" style="text;html=1;align=center;verticalAlign=bottom;fontSize=12;strokeColor=none;fillColor=none;spacing=2;" vertex="1" parent="1">
+      <mxGeometry x="30" y="296" width="180" height="66" as="geometry"/>
+    </mxCell>
+    <mxCell id="feedlab" value="feed (pure A)" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="55" y="394" width="130" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="prod" value="C&lt;sub&gt;A&lt;/sub&gt;(1,t)&#160;&#160; C&lt;sub&gt;B&lt;/sub&gt;(1,t)&#160;&#160; T&lt;sub&gt;r&lt;/sub&gt;(1,t)" style="edgeStyle=none;html=1;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2.5;fontSize=13;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="944" y="385" as="sourcePoint"/>
+        <mxPoint x="1180" y="385" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="prodlab" value="product,&#160; B desired" style="text;html=1;align=center;verticalAlign=top;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="1000" y="394" width="180" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="zruler" style="edgeStyle=none;html=1;endArrow=classic;startArrow=classic;endFill=1;startFill=1;strokeColor=#333333;strokeWidth=1.5;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="240" y="546" as="sourcePoint"/>
+        <mxPoint x="940" y="546" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="zt0" value="0.0" style="text;html=1;align=center;verticalAlign=top;fontSize=11;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="210" y="552" width="60" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="zt1" value="0.2" style="text;html=1;align=center;verticalAlign=top;fontSize=11;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="350" y="552" width="60" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="zt2" value="0.4" style="text;html=1;align=center;verticalAlign=top;fontSize=11;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="490" y="552" width="60" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="zt3" value="0.6" style="text;html=1;align=center;verticalAlign=top;fontSize=11;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="630" y="552" width="60" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="zt4" value="0.8" style="text;html=1;align=center;verticalAlign=top;fontSize=11;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="770" y="552" width="60" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="zt5" value="1.0" style="text;html=1;align=center;verticalAlign=top;fontSize=11;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="910" y="552" width="60" height="20" as="geometry"/>
+    </mxCell>
+    <mxCell id="zlab" value="axial coordinate&#160; z&#160;&#160;[m]" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;strokeColor=none;fillColor=none;labelBackgroundColor=#ffffff;" vertex="1" parent="1">
+      <mxGeometry x="490" y="536" width="200" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="eqn" value="&#8706;C&lt;sub&gt;A&lt;/sub&gt;/&#8706;t = &#8722;v&lt;sub&gt;l&lt;/sub&gt; &#8706;C&lt;sub&gt;A&lt;/sub&gt;/&#8706;z &#8722; k&lt;sub&gt;1&lt;/sub&gt;(T&lt;sub&gt;r&lt;/sub&gt;)C&lt;sub&gt;A&lt;/sub&gt;&#10;&#8706;C&lt;sub&gt;B&lt;/sub&gt;/&#8706;t = &#8722;v&lt;sub&gt;l&lt;/sub&gt; &#8706;C&lt;sub&gt;B&lt;/sub&gt;/&#8706;z + k&lt;sub&gt;1&lt;/sub&gt;(T&lt;sub&gt;r&lt;/sub&gt;)C&lt;sub&gt;A&lt;/sub&gt; &#8722; k&lt;sub&gt;2&lt;/sub&gt;(T&lt;sub&gt;r&lt;/sub&gt;)C&lt;sub&gt;B&lt;/sub&gt;&#10;&#8706;T&lt;sub&gt;r&lt;/sub&gt;/&#8706;t = &#8722;v&lt;sub&gt;l&lt;/sub&gt; &#8706;T&lt;sub&gt;r&lt;/sub&gt;/&#8706;z + reaction terms + U&lt;sub&gt;w&lt;/sub&gt;/(&#961;&lt;sub&gt;m&lt;/sub&gt;c&lt;sub&gt;pm&lt;/sub&gt;V&lt;sub&gt;r&lt;/sub&gt;)(T&lt;sub&gt;j&lt;/sub&gt; &#8722; T&lt;sub&gt;r&lt;/sub&gt;)&#10;Boundary conditions all at z = 0.&#160; U&lt;sub&gt;w&lt;/sub&gt; = 2000 kcal/(min&#183;K),&#160; V&lt;sub&gt;j&lt;/sub&gt;&lt;sup&gt;i&lt;/sup&gt; = 1 lt each." style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="100" y="600" width="620" height="90" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="znote" value="Each jacket zone is &lt;b&gt;spatially uniform, perfectly mixed and&#10;constant volume&lt;/b&gt;, with its own temperature T&lt;sub&gt;j&lt;/sub&gt;&lt;sup&gt;i&lt;/sup&gt;. The paper models&#10;&lt;b&gt;no axial jacket flow&lt;/b&gt;, so the arrangement is neither co- nor&#10;counter-current and no jacket outlets are labelled." style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#c0392b;strokeColor=#e8c4bf;fillColor=#fdf3f2;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="750" y="600" width="400" height="90" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="caveat" value="Reactor diameter is not specified &#8212; only V&lt;sub&gt;r&lt;/sub&gt; and L are given. The zone boundary values 0.0 / 0.2 / 0.4 / 0.6 / 0.8 / 1.0 m are from Eq. 46 in the text; the paper's own figure does not label them." style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontColor=#777777;strokeColor=none;fillColor=none;spacing=4;" vertex="1" parent="1">
+      <mxGeometry x="100" y="700" width="1050" height="34" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

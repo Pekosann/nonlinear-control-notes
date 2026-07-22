@@ -1,0 +1,18 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url.
+topnav:
+- title: Topnav
+  items:
+    - title: GitHub
+      external_url: https://github.com/Pekosann/nonlinear-control-notes
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+    - title: Browse
+      folderitems:
+        - title: All notes
+          url: /index.html
+        - title: Tags
+          url: /tag_index.html

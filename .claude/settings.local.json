@@ -1,0 +1,9 @@
+{
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "acm"
+  ],
+  "disabledMcpjsonServers": [
+    "acm"
+  ]
+}

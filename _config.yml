@@ -1,0 +1,82 @@
+repository: Pekosann/nonlinear-control-notes
+
+output: web
+# 'web' vs 'pdf' — used for conditional filtering. Leave as web.
+
+topnav_title: Nonlinear Control Notes
+# appears on the top navigation bar next to the home button
+
+site_title: Catatan Nonlinear Control
+# appears in the browser tab
+
+company_name: Hugo Demak
+# appears in the footer
+
+github_editme_path: Pekosann/nonlinear-control-notes/blob/main/
+# adds an "Edit me" pencil button on each page that jumps to GitHub
+
+google_analytics:
+# leave blank to disable
+
+host: 127.0.0.1
+port: 4000
+
+exclude:
+  - .idea/
+  - .gitignore
+  - vendor
+  - tools/
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - "*.ps1"
+
+feedback_disable: true
+# no "Feedback" mail link in the topnav
+
+highlighter: rouge
+
+markdown: kramdown
+kramdown:
+ input: GFM
+ auto_ids: true
+ hard_wrap: true
+ # hard_wrap: true makes a single newline render as a line break, the way Obsidian
+ # does. Without it, consecutive equation lines get joined into one run-on line.
+ syntax_highlighter: rouge
+ math_engine: mathjax
+ # math_engine protects $$...$$ spans from Markdown mangling (e.g. x_1 x_2 becoming
+ # italics). tools/sync.ps1 rewrites single $...$ into $$...$$ automatically.
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      search: true
+      sidebar: notes_sidebar
+      topnav: topnav
+  -
+    scope:
+      path: "notes"
+      type: "pages"
+    values:
+      layout: "page"
+      comments: false
+      search: true
+      sidebar: notes_sidebar
+      topnav: topnav
+      folder: notes
+      toc: true
+
+sidebars:
+- notes_sidebar
+
+description: "Catatan lengkap tentang nonlinear control — teori, turunan matematis, dan implementasi."
+
+# needed for sitemap.xml and feed.xml
+url: https://pekosann.github.io
+baseurl: /nonlinear-control-notes

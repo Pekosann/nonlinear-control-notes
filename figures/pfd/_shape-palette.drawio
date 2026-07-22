@@ -1,0 +1,78 @@
+<mxGraphModel dx="800" dy="600" grid="0" page="1" pageWidth="1100" pageHeight="850" background="#ffffff">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <mxCell id="t1" value="vessels.tank" style="shape=mxgraph.pid.vessels.tank;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="40" y="40" width="100" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="t2" value="vessels.reactor" style="shape=mxgraph.pid.vessels.reactor;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="200" y="40" width="100" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="t3" value="vessels.mixing_reactor" style="shape=mxgraph.pid.vessels.mixing_reactor;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="360" y="40" width="100" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="t4" value="vessels.pressurized_vessel" style="shape=mxgraph.pid.vessels.pressurized_vessel;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="520" y="40" width="100" height="120" as="geometry"/>
+    </mxCell>
+    <mxCell id="t5" value="pid2misc.column" style="shape=mxgraph.pid2misc.column;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="680" y="40" width="80" height="200" as="geometry"/>
+    </mxCell>
+    <mxCell id="t6" value="vessels.drum_or_condenser" style="shape=mxgraph.pid.vessels.drum_or_condenser;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="820" y="40" width="140" height="80" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="h1" value="heat_exchangers.heat_exchanger_1" style="shape=mxgraph.pid.heat_exchangers.heat_exchanger_1;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="40" y="260" width="120" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="h2" value="shell_and_tube_heat_exchanger_1" style="shape=mxgraph.pid.heat_exchangers.shell_and_tube_heat_exchanger_1;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="220" y="260" width="160" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="h3" value="double_pipe_heat_exchanger" style="shape=mxgraph.pid.heat_exchangers.double_pipe_heat_exchanger;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="440" y="260" width="160" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="h4" value="heat_exchangers.reboiler" style="shape=mxgraph.pid.heat_exchangers.reboiler;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="660" y="260" width="140" height="100" as="geometry"/>
+    </mxCell>
+    <mxCell id="h5" value="heat_exchangers.condenser" style="shape=mxgraph.pid.heat_exchangers.condenser;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="850" y="260" width="140" height="100" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="v1" value="valve gate/man" style="shape=mxgraph.pid2valves.valve;valveType=gate;actuator=man;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="40" y="440" width="80" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="v2" value="valve globe/diaph" style="shape=mxgraph.pid2valves.valve;valveType=globe;actuator=diaph;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="170" y="440" width="80" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="v3" value="valve ball/none" style="shape=mxgraph.pid2valves.valve;valveType=ball;actuator=none;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="300" y="440" width="80" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="v4" value="valve threeWay/motor" style="shape=mxgraph.pid2valves.valve;valveType=threeWay;actuator=motor;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="430" y="440" width="80" height="60" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="p1" value="pumps.centrifugal_pump_1" style="shape=mxgraph.pid.pumps.centrifugal_pump_1;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="560" y="430" width="90" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="p2" value="pumps.gas_blower" style="shape=mxgraph.pid.pumps.gas_blower;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="700" y="430" width="90" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="a1" value="agitators.agitator_1" style="shape=mxgraph.pid.agitators.agitator_1;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="840" y="430" width="90" height="80" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="i1" value="indicator" style="shape=mxgraph.pid2inst.indicator;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="40" y="580" width="60" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="i2" value="discInst" style="shape=mxgraph.pid2inst.discInst;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="140" y="580" width="60" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="i3" value="sharedCont" style="shape=mxgraph.pid2inst.sharedCont;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="240" y="580" width="60" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="f1" value="flow_sensors.rotameter" style="shape=mxgraph.pid.flow_sensors.rotameter;html=1;fillColor=none;strokeColor=#000000;verticalLabelPosition=bottom;verticalAlign=top;" vertex="1" parent="1">
+      <mxGeometry x="340" y="570" width="60" height="80" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
