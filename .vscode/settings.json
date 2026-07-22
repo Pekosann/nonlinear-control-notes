@@ -1,0 +1,20 @@
+{
+  // Pasting an image straight into a note (Ctrl+V) drops the file in figures\
+  // instead of next to the .md — notes\ is published, and an image sitting there
+  // would break because pages are served from the site root, not from /notes/.
+  "markdown.copyFiles.destination": {
+    "/notes/**/*.md": "${documentWorkspaceFolder}/figures/${fileName}"
+  },
+  "markdown.editor.filePaste.copyIntoWorkspace": "mediaFiles",
+  "markdown.editor.drop.copyIntoWorkspace": "mediaFiles",
+
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "files.eol": "\n"
+}

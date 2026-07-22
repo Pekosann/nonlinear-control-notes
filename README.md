@@ -133,7 +133,37 @@ aman dan mengabaikan `_plugins/`). Jangan pindah ke "Deploy from a branch".
 
 ## Gambar
 
-Taruh file di `figures\`, lalu tulis salah satu:
+### Cara tercepat: copy-paste screenshot
+
+Screenshot dengan **Win+Shift+S**, lalu:
+
+```powershell
+paste.cmd "skema dua cstr"
+```
+
+File tersimpan sebagai `figures\skema-dua-cstr.png`, dan baris Markdown-nya
+langsung ada di clipboard — tinggal **Ctrl+V** di catatanmu:
+
+```markdown
+![skema dua cstr](figures/skema-dua-cstr.png)
+```
+
+Mau sekalian caption: `paste.cmd "skema dua cstr" -Caption "Gambar 1. Dua CSTR seri."`
+Tanpa nama juga boleh (`paste.cmd`) — otomatis jadi `gambar-001.png`, `gambar-002.png`, …
+Sumbernya bebas: Snipping Tool, PrtScn, "Copy image" di browser, Ctrl+C dari draw.io,
+Excel, atau MATLAB.
+
+### Kalau pakai VS Code
+
+Ctrl+V gambar langsung ke dalam file `.md` juga jalan — `.vscode\settings.json`
+sudah diatur supaya filenya masuk ke `figures\`, bukan ke sebelah `.md`-nya.
+VS Code menulis link `../figures/x.png`; `sync` membetulkannya jadi `figures/x.png`.
+
+> **Kenapa harus di `figures\`?** Halaman disajikan dari root situs
+> (`/101-dua-tangki-cstr.html`), bukan dari `/notes/`. Gambar yang diletakkan di
+> `notes\` akan tampil waktu preview lokal tapi 404 di situs live.
+
+### Menulis manual
 
 ```markdown
 ![[skema-tangki.png]]              ← gaya Obsidian, otomatis jadi figures/…

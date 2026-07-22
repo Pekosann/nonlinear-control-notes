@@ -161,6 +161,10 @@ foreach ($f in $files) {
     $fm['tags'] = '[' + (($tags | ForEach-Object { $_ }) -join ', ') + ']'
 
     # --- body rewrites ------------------------------------------------------
+    # VS Code inserts image links relative to the .md file (../figures/x.png),
+    # but pages are served from the site root, so they need figures/x.png.
+    $body = $body -replace '\]\((?:\.\./)+figures/', '](figures/'
+    $body = $body -replace '(src=")(?:\.\./)+figures/', '$1figures/'
     $body = [regex]::Replace($body, '!\[\[([^\]|]+?)(\|[^\]]*)?\]\]', {
         param($m) "![]({0})" -f "figures/$($m.Groups[1].Value)"
     })
