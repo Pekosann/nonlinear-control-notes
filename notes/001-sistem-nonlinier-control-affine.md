@@ -1,5 +1,5 @@
 ---
-title: 001 — Sistem Nonlinier Control
+title: 001 — Sistem Nonlinier Control Affine
 section: Dasar Teori
 tags: [dasar, control-affine]
 summary: Bentuk control-affine, arti kata affine, dan kenapa sistem linier hanyalah kasus spesialnya.
@@ -25,44 +25,26 @@ Bentuk Pers. (1) punya nama khusus: **control-affine**.
 
 ## Apa itu *control-affine*?
 
-*Affine* artinya "linier ditambah konstanta" — fungsi berbentuk $a + bu$.
-Jadi $3 + 2u$ affine terhadap $u$, sedangkan $u^2$ atau $e^u$ tidak.
+*Affine* artinya "linier ditambah konstanta" — fungsi berbentuk $a + bu$. Jadi $3 + 2u$ affine terhadap $u$, sedangkan $u^2$ atau $e^u$ tidak.
 
-Kuncinya: ambil satu nilai $x$ tertentu, lalu bekukan. Pada saat itu $f(x)$ dan
-$g(x)$ cuma vektor angka, jadi Pers. (1) menjadi
+Kuncinya: ambil satu nilai $x$ tertentu, lalu bekukan. Pada saat itu $f(x)$ dan $g(x)$ cuma vektor angka, jadi Pers. (1) menjadi
 
 $\dot{x} = \underbrace{f(x)}_{\text{konstanta } a} + \underbrace{g(x)}_{\text{konstanta } b}\,u$
 
-persis bentuk $a + bu$. Itulah maksudnya: **linier terhadap input $u$**, walaupun
-boleh serumit apa pun terhadap state $x$. Yang disyaratkan cuma soal bagaimana
-$u$ dilibatkan dalam persamaan, bukan soal seberapa nonlinier sistemnya.
+persis bentuk $a + bu$. Itulah maksudnya: **linier terhadap input $u$**, walaupun boleh serumit apa pun terhadap state $x$. Yang disyaratkan cuma soal bagaimana $u$ dilibatkan dalam persamaan, bukan soal seberapa nonlinier sistemnya.
 
-Istilah "affine terhadap input yang dimanipulasi" ini dipakai [@corriou] untuk
-menandai kelas sistem yang bisa ditangani *nonlinear geometric control*.
-Kedua fungsinya disebut **vector field of the dynamics** ($f$) dan
-**vector field of the control** ($g$) [@corriou]:
+Istilah "affine terhadap input yang dimanipulasi" ini dipakai [@corriou] untuk menandai kelas sistem yang bisa ditangani *nonlinear geometric control*. Kedua fungsinya disebut **vector field of the dynamics** ($f$) dan **vector field of the control** ($g$) [@corriou]:
 
-- $f(x)$ — vector field dinamika: ke mana sistem bergerak sendiri kalau inputnya
-  dimatikan ($u=0$). Di literatur *differential-geometric* sering disebut *drift*.
-- $g(x)$ — vector field kontrol: ke arah mana dan seberapa kuat input menggeser
-  state. Sering juga ditulis *input vector field*.
+- $f(x)$ — vector field dinamika: ke mana sistem bergerak sendiri kalau inputnya dimatikan ($u=0$). Di literatur *differential-geometric* sering disebut *drift*.
+- $g(x)$ — vector field kontrol: ke arah mana dan seberapa kuat input menggeser state. Sering juga ditulis *input vector field*.
 
-> Menurut [@corriou], sebagian besar sistem di teknik kimia memang berbentuk
-> Pers. (1). Alasannya sederhana: input yang dimanipulasi biasanya laju alir atau
-> bukaan valve, dan besaran itu masuk secara linier ke dalam model.
-> Jadi syarat affine tidak seketat kelihatannya — walau [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html)
-> menunjukkan bahwa ada pengecualiannya.
+> Menurut [@corriou], sebagian besar sistem di teknik kimia memang berbentuk Pers. (1). Alasannya sederhana: input yang dimanipulasi biasanya laju alir atau bukaan valve, dan besaran itu masuk secara linier ke dalam model. Jadi syarat affine tidak seketat kelihatannya — walau [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html) menunjukkan bahwa ada pengecualiannya.
 
-Yang **tidak boleh** adalah $u$ terjebak di dalam fungsi nonlinier, misalnya
-$e^{u}$, $u^2$, atau $\sqrt{u}$. Kalau itu terjadi, sistemnya hanya bisa ditulis
-$\dot{x} = f(x,u)$ — bentuk nonlinier umum, bukan control-affine.
-Contoh nyatanya ada di [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html): di sana laju alir pendingin muncul
-di dalam eksponensial, jadi tidak ada $g(x)$ yang bisa dipisahkan.
+Yang **tidak boleh** adalah $u$ terjebak di dalam fungsi nonlinier, misalnya $e^{u}$, $u^2$, atau $\sqrt{u}$. Kalau itu terjadi, sistemnya hanya bisa ditulis $\dot{x} = f(x,u)$ — bentuk nonlinier umum, bukan control-affine. Contoh nyatanya ada di [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html): di sana laju alir pendingin muncul di dalam eksponensial, jadi tidak ada $g(x)$ yang bisa dipisahkan.
 
 ### Kenapa strukturnya penting
 
-Karena $u$ masuk secara linier, $u$ bisa **dicari secara eksplisit**. Kalau $y$
-diturunkan terhadap waktu sampai $u$ muncul, hasilnya
+Karena $u$ masuk secara linier, $u$ bisa **dicari secara eksplisit**. Kalau $y$ diturunkan terhadap waktu sampai $u$ muncul, hasilnya
 
 $y^{(r)} = L_f^r h(x) + L_g L_f^{r-1} h(x)\,u$
 
@@ -70,8 +52,7 @@ dan $u$ tinggal dipindah ruas:
 
 $u = \dfrac{v - L_f^r h(x)}{L_g L_f^{r-1} h(x)}$
 
-Inilah inti *feedback linearization*. Kalau sistemnya tidak affine, langkah
-pembagian ini tidak ada — $u$ harus dicari secara numerik tiap langkah waktu.
+Inilah inti *feedback linearization*. Kalau sistemnya tidak affine, langkah pembagian ini tidak ada — $u$ harus dicari secara numerik tiap langkah waktu.
 
 ## Sistem linier sebagai kasus spesial
 

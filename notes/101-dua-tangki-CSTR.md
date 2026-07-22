@@ -8,13 +8,10 @@ folder: notes
 last_updated: Jul 22, 2026
 ---
 
-Dua CSTR terpasang seri, didinginkan oleh satu aliran pendingin yang mengalir
-*cocurrent* (searah dengan aliran proses). Reaksi eksotermik ireversibel $A \to B$
-terjadi di kedua tangki [@henson1990].
+Dua CSTR terpasang seri, didinginkan oleh satu aliran pendingin yang mengalir *cocurrent* (searah dengan aliran proses). Reaksi eksotermik ireversibel $A \to B$ terjadi di kedua tangki [@henson1990].
 
 ![Skema dua CSTR seri dengan pendingin cocurrent](figures/henson1990-dua-cstr-seri.png)
-*Gambar 1. Sistem dua CSTR seri. Pendingin masuk jaket 1 pada $T_{cf}$, keluar pada
-$T_{c1}$, lalu masuk jaket 2 — inilah alasan Pers. 4 memakai $T_{c1}$, bukan $T_{cf}$.*
+*Gambar 1. Sistem dua CSTR seri. Pendingin masuk jaket 1 pada $T_{cf}$, keluar pada $T_{c1}$, lalu masuk jaket 2 — inilah alasan Pers. 4 memakai $T_{c1}$, bukan $T_{cf}$.*
 
 ## Model Proses (Pers. 1–4)
 
@@ -32,16 +29,13 @@ $$
 
 ### Catatan untuk Pers. 4
 
-Temperatur pendingin yang masuk ke jaket kedua **bukan** $T_{cf}$, melainkan
-temperatur keluar pendingin dari jaket pertama. Untuk aliran *cocurrent*,
-temperatur pendingin setelah tangki 1 adalah:
+Temperatur pendingin yang masuk ke jaket kedua **bukan** $T_{cf}$, melainkan temperatur keluar pendingin dari jaket pertama. Untuk aliran *cocurrent*, temperatur pendingin setelah tangki 1 adalah:
 
 $$
 T_{c,\text{out},1} = T_1 + \exp\!\left(-\frac{hA_1}{q_c\,\rho_c\,C_{pc}}\right)(T_{cf} - T_1)
 $$
 
-Inilah temperatur pendingin masuk untuk tangki 2. Jadi suku dalam kurung siku di
-Pers. 4 sebenarnya adalah $T_{c,\text{out},1} - T_2$.
+Inilah temperatur pendingin masuk untuk tangki 2. Jadi suku dalam kurung siku di Pers. 4 sebenarnya adalah $T_{c,\text{out},1} - T_2$.
 
 ## Definisi State, Input, Gangguan, dan Output (Pers. 5)
 
@@ -60,8 +54,7 @@ $$
 \dot{x} = f(x, u, d), \qquad y = h(x) \tag{6}
 $$
 
-Perhatikan $f$ bergantung pada $u$ — bukan cuma pada $x$. Alasannya dibahas di
-bagian terakhir catatan ini, dan itulah inti dari [@henson1990].
+Perhatikan $f$ bergantung pada $u$ — bukan cuma pada $x$. Alasannya dibahas di bagian terakhir catatan ini, dan itulah inti dari [@henson1990].
 
 ### Notasi ringkas
 
@@ -77,9 +70,7 @@ $$
 \mu_i \triangleq \frac{\rho_c C_{pc}}{\rho C_p V_i}
 $$
 
-$k(T)$ adalah konstanta laju Arrhenius, dan $\beta_i(q_c)$ adalah efektivitas
-perpindahan panas jaket ke-$i$ — inilah suku yang membuat $q_c$ masuk secara
-nonlinier.
+$k(T)$ adalah konstanta laju Arrhenius, dan $\beta_i(q_c)$ adalah efektivitas perpindahan panas jaket ke-$i$ — inilah suku yang membuat $q_c$ masuk secara nonlinier.
 
 ### Bentuk Persamaan Matriks
 
@@ -104,9 +95,7 @@ $$
 
 ### Kenapa bukan $\dot{x} = f(x) + g(x)u$
 
-Di [001 — Sistem Nonlinier Control-Affine](001-sistem-nonlinier-control-affine.html) bentuk umum yang dipakai adalah *control-affine*:
-$\dot{x} = f(x) + g(x)u$, yaitu $u$ masuk secara linier. Sistem ini **tidak**
-bisa ditulis begitu.
+Di [001 — Sistem Nonlinier Control-Affine](001-sistem-nonlinier-control-affine.html) bentuk umum yang dipakai adalah *control-affine*: $\dot{x} = f(x) + g(x)u$, yaitu $u$ masuk secara linier. Sistem ini **tidak** bisa ditulis begitu.
 
 Lihat suku pendingin di baris kedua Pers. 7:
 
@@ -115,12 +104,6 @@ $$
 = \mu_1\,u\left[1 - \exp\!\left(-\frac{hA_1}{u\,\rho_c\,C_{pc}}\right)\right]\left(T_{cf} - x_2\right)
 $$
 
-$u$ muncul dua kali: sebagai faktor pengali **dan** di dalam eksponensial. Jadi
-suku ini tidak bisa dipisah menjadi "sesuatu yang hanya bergantung $x$" dikali $u$.
-Tidak ada $g(x)$ yang memenuhi.
+$u$ muncul dua kali: sebagai faktor pengali **dan** di dalam eksponensial. Jadi suku ini tidak bisa dipisah menjadi "sesuatu yang hanya bergantung $x$" dikali $u$. Tidak ada $g(x)$ yang memenuhi.
 
-Karena itu bentuk yang benar adalah Pers. 6, $\dot{x} = f(x, u, d)$ — model
-nonlinier *umum*. Metode yang mensyaratkan struktur affine tidak bisa langsung
-dipakai di sini, dan justru inilah alasan Henson & Seborg menulis papernya:
-laju alir pendingin lewat jaket adalah contoh khas input yang masuk secara
-nonlinier [@henson1990].
+Karena itu bentuk yang benar adalah Pers. 6, $\dot{x} = f(x, u, d)$ — model nonlinier *umum*. Metode yang mensyaratkan struktur affine tidak bisa langsung dipakai di sini, dan justru inilah alasan Henson & Seborg menulis papernya: laju alir pendingin lewat jaket adalah contoh khas input yang masuk secara nonlinier [@henson1990].

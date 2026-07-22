@@ -32,6 +32,13 @@ menjalankan sync, lalu membuka file di VS Code.
 
 ### 2. Tulis / edit
 
+> **Jangan tekan Enter di tengah kalimat.** Satu paragraf = satu baris panjang;
+> biarkan editor yang membungkusnya sendiri (word wrap sudah aktif di VS Code).
+> Situs ini memakai `hard_wrap`, jadi setiap newline jadi ganti baris beneran di
+> halaman — kalau kamu wrap manual, tampilannya jadi patah di tengah kalimat.
+> Ganti baris tetap dipakai kalau memang disengaja, misalnya satu persamaan per
+> baris seperti di catatan 001.
+
 Edit file di `notes\` pakai editor apa pun. Yang perlu kamu isi cuma bagian atas file:
 
 ```yaml
