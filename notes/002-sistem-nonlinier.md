@@ -28,6 +28,17 @@ Dua asumsi yang dipakai [@henson1990] untuk model ini: state proses dapat diukur
 
 Contoh konkretnya ada di [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html), di mana laju alir pendingin muncul di dalam suku eksponensial.
 
+### Kalau sistemnya *time-variant*
+
+Pers. (2) menganggap bentuk $f$ tetap sepanjang waktu. Kalau karakteristik prosesnya sendiri berubah — katalis terdeaktivasi, permukaan penukar panas ter-*fouling*, kondisi ambient bergeser — maka waktu masuk sebagai variabel tersendiri:
+
+$\dot{x} = f(x, d, u, t)\quad(3)$
+$y = h(x)$
+
+[@slotine1991] menulis dinamika plant sebagai $\dot{x} = f(x, u, t)$ dan mencatat soal istilah: pada sistem linier kita menyebutnya *time-invariant* atau *time-varying*, sedangkan pada sistem nonlinier istilah yang lazim dipakai adalah **autonomous** dan **non-autonomous**. Definisi 3.1 di sana: sistem disebut *autonomous* kalau $f$ tidak bergantung secara eksplisit pada waktu, yaitu bisa ditulis $\dot{x} = f(x)$; kalau bergantung, sistemnya *non-autonomous*.
+
+> Ada dua catatan halus dari [@slotine1991] soal ini. Pertama, secara ketat semua sistem fisik itu non-autonomous, karena tidak ada karakteristik dinamik yang benar-benar tetap; sistem autonomous adalah idealisasi, sama seperti konsep sistem linier. Dalam praktik, sifat sistem sering berubah sangat lambat sehingga variasi waktunya bisa diabaikan tanpa kesalahan berarti. Kedua, untuk sistem kendali, definisi itu dikenakan pada dinamika *closed-loop* — plant yang time-invariant, $\dot{x} = f(x,u)$, tetap menghasilkan closed-loop non-autonomous kalau hukum kendalinya bergantung waktu, $u = g(x,t)$.
+
 ## Kenapa sistem nonlinier perlu perlakuan khusus
 
 Sistem linier waktu-invarian punya sifat yang membuat analisisnya mudah [@slotine1991]: titik kesetimbangannya tunggal kalau matriks $A$ nonsingular, kestabilannya ditentukan eigenvalue tanpa peduli kondisi awal, berlaku prinsip superposisi, dan input sinusoidal menghasilkan output sinusoidal dengan frekuensi yang sama.
