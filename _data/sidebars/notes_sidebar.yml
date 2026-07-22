@@ -32,6 +32,10 @@ entries:
       url: /002-sistem-nonlinier.html
       output: web
 
+    - title: 003 — Sistem Autonomous dan Non-Autonomous
+      url: /003-autonomous-dan-non-autonomous.html
+      output: web
+
   - title: Example
     output: web
     folderitems:
