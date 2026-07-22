@@ -28,3 +28,11 @@ entries:
       url: /001-sistem-nonlinier.html
       output: web
 
+  - title: Example
+    output: web
+    folderitems:
+
+    - title: 101 — Dua Tangki CSTR
+      url: /101-dua-tangki-CSTR.html
+      output: web
+
