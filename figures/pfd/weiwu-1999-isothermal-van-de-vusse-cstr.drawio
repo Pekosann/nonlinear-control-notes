@@ -1,0 +1,86 @@
+<mxGraphModel dx="1300" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="880" math="0" shadow="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <mxCell id="title" value="Wei Wu (1999) — Isothermal Van de Vusse CSTR" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="80" y="18" width="1040" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="subtitle" value="Series&#8211;parallel scheme A &#8594; B &#8594; C and 2A &#8594; D &#183; B is the desired intermediate &#183; nonminimum phase" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="80" y="46" width="1040" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="vessel" value="" style="shape=mxgraph.pid.vessels.tank;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2.5;" vertex="1" parent="1">
+      <mxGeometry x="330" y="200" width="220" height="280" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="shaft" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="460" y="158" as="sourcePoint"/>
+        <mxPoint x="460" y="342" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="motor" value="M" style="ellipse;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="440" y="126" width="40" height="32" as="geometry"/>
+    </mxCell>
+    <mxCell id="agit" value="" style="shape=mxgraph.pid.agitators.agitator_(propeller);html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="432" y="304" width="56" height="46" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="feed" value="F&#160;&#160; C&lt;sub&gt;Af&lt;/sub&gt; = 10 kmol/m&#179;" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="80" y="130" as="sourcePoint"/>
+        <mxPoint x="382" y="214" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="382" y="130"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="feedlab" value="feed of A" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="82" y="140" width="120" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="prod" value="F&#160;&#160; C&lt;sub&gt;A&lt;/sub&gt;&#160;&#160; C&lt;sub&gt;B&lt;/sub&gt;" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="500" y="480" as="sourcePoint"/>
+        <mxPoint x="900" y="570" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="500" y="570"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="prodlab" value="product,&#160; B desired" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="760" y="580" width="160" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="inner" value="&lt;b&gt;Isothermal CSTR&lt;/b&gt;&lt;br&gt;V&lt;sub&gt;r&lt;/sub&gt;&lt;br&gt;C&lt;sub&gt;A&lt;/sub&gt;, C&lt;sub&gt;B&lt;/sub&gt;" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="344" y="234" width="180" height="56" as="geometry"/>
+    </mxCell>
+    <mxCell id="rxn" value="A &#8594; B &#8594; C&#10;2A &#8594; D" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;spacing=2;" vertex="1" parent="1">
+      <mxGeometry x="344" y="378" width="190" height="50" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="isonote" value="&lt;b&gt;Isothermal&lt;/b&gt; operation is &lt;b&gt;assumed&lt;/b&gt;, not achieved by any modelled&#10;hardware &#8212; the papers include no jacket, coil or heat exchanger.&#10;No pump or valve is modelled either: the dilution rate F/V&lt;sub&gt;r&lt;/sub&gt; is&#10;manipulated directly. Species C and D are formed but never tracked." style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="620" y="150" width="500" height="86" as="geometry"/>
+    </mxCell>
+    <mxCell id="isolead" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#999999;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="554" y="240" as="sourcePoint"/>
+        <mxPoint x="616" y="212" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="eqn" value="dC&lt;sub&gt;A&lt;/sub&gt;/dt = &#8722;k&#8321;C&lt;sub&gt;A&lt;/sub&gt; &#8722; k&#8323;C&lt;sub&gt;A&lt;/sub&gt;&#178; + (F/V&lt;sub&gt;r&lt;/sub&gt;)(C&lt;sub&gt;Af&lt;/sub&gt; &#8722; C&lt;sub&gt;A&lt;/sub&gt;)&#10;dC&lt;sub&gt;B&lt;/sub&gt;/dt =&#160; k&#8321;C&lt;sub&gt;A&lt;/sub&gt; &#8722; k&#8322;C&lt;sub&gt;B&lt;/sub&gt; &#8722; (F/V&lt;sub&gt;r&lt;/sub&gt;)C&lt;sub&gt;B&lt;/sub&gt;" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="100" y="600" width="440" height="60" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="ptable" value="&lt;b&gt;Two parameter sets for the same reactor&lt;/b&gt;&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; style=&quot;margin-top:6px;border-collapse:collapse;font-size:11px&quot;&gt;&lt;tr style=&quot;border-bottom:1px solid #bbb&quot;&gt;&lt;td&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;&lt;i&gt;J. Process Control&lt;/i&gt; &lt;b&gt;9&lt;/b&gt;, 171&lt;br&gt;stable inverse control&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;&lt;i&gt;Chem. Eng. Sci.&lt;/i&gt; &lt;b&gt;54&lt;/b&gt;, 3815&lt;br&gt;adaptive control&lt;/td&gt;&lt;td&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;k&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0.05&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;50&lt;/td&gt;&lt;td&gt;h&lt;sup&gt;-1&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;k&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0.10&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;100&lt;/td&gt;&lt;td&gt;h&lt;sup&gt;-1&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;k&lt;sub&gt;3&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0.101&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;101&lt;/td&gt;&lt;td&gt;m&#179;/(kmol&#183;h)&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;(F/V&lt;sub&gt;r&lt;/sub&gt;)&lt;sub&gt;s&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0.1&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;1&lt;/td&gt;&lt;td&gt;h&lt;sup&gt;-1&lt;/sup&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;C&lt;sub&gt;Af&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;10&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;10&lt;/td&gt;&lt;td&gt;kmol/m&#179;&lt;/td&gt;&lt;/tr&gt;&lt;tr style=&quot;border-top:1px solid #bbb&quot;&gt;&lt;td&gt;(C&lt;sub&gt;A&lt;/sub&gt;&lt;sup&gt;s&lt;/sup&gt;, C&lt;sub&gt;B&lt;/sub&gt;&lt;sup&gt;s&lt;/sup&gt;)&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;2.49, 0.622&lt;/td&gt;&lt;td align=&quot;center&quot;&gt;0.151, 0.075&lt;/td&gt;&lt;td&gt;kmol/m&#179;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="560" y="580" width="560" height="212" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="caveat" value="Neither paper contains a process schematic; this diagram is composed from their equations. Reactor dimensions are not specified &#8212; only the ratio F/V&lt;sub&gt;r&lt;/sub&gt; is ever used.&#10;&lt;b&gt;Correction:&lt;/b&gt; the body text of the stable-inverse-control paper prints k&#8323; = 0.010; that is a typo. Only k&#8323; = 0.101 reproduces the stated steady state (2.49, 0.622). The papers write the k&#8323; unit as (kmol&#183;h)&#8315;&#185;, which is dimensionally wrong; it must be m&#179;/(kmol&#183;h)." style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontColor=#777777;strokeColor=none;fillColor=none;spacing=4;" vertex="1" parent="1">
+      <mxGeometry x="100" y="806" width="1020" height="52" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

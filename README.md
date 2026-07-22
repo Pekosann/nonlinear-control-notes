@@ -13,10 +13,18 @@ Semua tulisan ada di **`notes\`**. Satu file `.md` = satu halaman. Tulis Markdow
 persis seperti di Obsidian — math pakai `$...$`, gambar pakai `![[gambar.png]]`.
 Skrip `sync` mengurus front matter, sidebar, permalink, dan tag secara otomatis.
 
+> **Pakai file `.cmd`, bukan `.ps1`.** Windows PowerShell secara default menolak
+> menjalankan skrip (`running scripts is disabled on this system`). File `.cmd` di
+> folder ini adalah pembungkus yang melewati pembatasan itu tanpa mengubah setelan
+> keamanan komputermu — bisa diketik di terminal atau diklik dua kali.
+>
+> Kalau kamu lebih suka menjalankan `.ps1` langsung, sekali saja jalankan:
+> `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
+
 ### 1. Bikin catatan baru
 
 ```powershell
-.\new.ps1 "Relative Degree" -Section "Dasar Teori" -Tags dasar,glc
+.\new.cmd "Relative Degree" -Section "Dasar Teori" -Tags dasar,glc
 ```
 
 Membuat `notes\002-relative-degree.md` (nomor otomatis), mengisi front matter,
@@ -40,7 +48,7 @@ Sisanya (`permalink`, `folder`, `last_updated`) diisi otomatis — biarkan saja.
 ### 3. Lihat hasilnya
 
 ```powershell
-.\serve.ps1
+.\serve.cmd
 ```
 
 Buka http://127.0.0.1:4000/. Simpan file → halaman rebuild sendiri.
@@ -49,7 +57,7 @@ Restart hanya perlu kalau kamu menambah file baru atau mengubah `_config.yml`.
 ### 4. Publish
 
 ```powershell
-.\publish.ps1 "tambah catatan relative degree"
+.\publish.cmd "tambah catatan relative degree"
 ```
 
 Sync → build (gagal build = tidak di-push) → commit → push.
@@ -67,7 +75,7 @@ GitHub Actions menerbitkan ke GitHub Pages sekitar 1 menit kemudian.
 | URL halaman | Nama file: `002-relative-degree.md` → `/002-relative-degree.html` |
 
 Mau menyisipkan catatan di tengah? Ganti nama filenya jadi `002a-...` atau
-nomori ulang, lalu jalankan `.\tools\sync.ps1`.
+nomori ulang, lalu jalankan `.\sync.cmd`.
 
 ## Menulis math
 
@@ -121,7 +129,8 @@ tags\           ← halaman tag (dibuat otomatis oleh sync)
 _data\sidebars\ ← sidebar (dibuat otomatis oleh sync)
 _archive\       ← draft lama, tidak ikut dipublish
 tools\sync.ps1  ← mesin di balik layar
-new.ps1 serve.ps1 publish.ps1
+new.cmd serve.cmd publish.cmd sync.cmd   ← yang kamu jalankan
+new.ps1 serve.ps1 publish.ps1            ← isinya
 _includes\ _layouts\ css\ js\ fonts\ images\   ← tema, jarang disentuh
 ```
 
@@ -130,7 +139,7 @@ _includes\ _layouts\ css\ js\ fonts\ images\   ← tema, jarang disentuh
 1. Install Ruby+DevKit: `winget install RubyInstallerTeam.RubyWithDevKit.3.3`
 2. `git clone https://github.com/Pekosann/nonlinear-control-notes.git`
 3. `bundle install`
-4. `.\serve.ps1`
+4. `.\serve.cmd`
 
 ## Lisensi
 

@@ -1,0 +1,90 @@
+<mxGraphModel dx="1300" dy="900" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0" background="#ffffff">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+
+    <mxCell id="title" value="Wei Wu (1999), Example 2 — Adiabatic Van de Vusse CSTR" style="text;html=1;align=center;verticalAlign=middle;fontSize=17;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="80" y="18" width="1040" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="subtitle" value="A &#8594; B &#8594; C and 2A &#8594; D, all exothermic &#183; temperature-dependent Arrhenius kinetics &#183; nonminimum phase" style="text;html=1;align=center;verticalAlign=middle;fontSize=12;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="80" y="46" width="1040" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="vessel" value="" style="shape=mxgraph.pid.vessels.tank;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2.5;" vertex="1" parent="1">
+      <mxGeometry x="330" y="200" width="220" height="280" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="shaft" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#000000;strokeWidth=2;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="460" y="158" as="sourcePoint"/>
+        <mxPoint x="460" y="342" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="motor" value="M" style="ellipse;html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="440" y="126" width="40" height="32" as="geometry"/>
+    </mxCell>
+    <mxCell id="agit" value="" style="shape=mxgraph.pid.agitators.agitator_(propeller);html=1;fillColor=none;strokeColor=#000000;strokeWidth=2;" vertex="1" parent="1">
+      <mxGeometry x="432" y="304" width="56" height="46" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="feed" value="F&#160;&#160; C&lt;sub&gt;Af&lt;/sub&gt; = 10&#160;&#160; T&lt;sub&gt;f&lt;/sub&gt; = 100 K" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="70" y="130" as="sourcePoint"/>
+        <mxPoint x="382" y="214" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="382" y="130"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="feedlab" value="feed of A" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="72" y="140" width="120" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="prod" value="F&#160;&#160; C&lt;sub&gt;A&lt;/sub&gt;&#160;&#160; C&lt;sub&gt;B&lt;/sub&gt;&#160;&#160; T" style="edgeStyle=orthogonalEdgeStyle;html=1;rounded=0;endArrow=classic;endFill=1;strokeColor=#000000;strokeWidth=2;fontSize=14;verticalAlign=bottom;labelBackgroundColor=#ffffff;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="500" y="480" as="sourcePoint"/>
+        <mxPoint x="900" y="570" as="targetPoint"/>
+        <Array as="points">
+          <mxPoint x="500" y="570"/>
+        </Array>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="prodlab" value="product,&#160; B desired" style="text;html=1;align=left;verticalAlign=middle;fontSize=11;fontColor=#555555;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="760" y="580" width="160" height="20" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="inner" value="&lt;b&gt;Adiabatic CSTR&lt;/b&gt;&lt;br&gt;V&lt;sub&gt;r&lt;/sub&gt;&lt;br&gt;C&lt;sub&gt;A&lt;/sub&gt;, C&lt;sub&gt;B&lt;/sub&gt;, T" style="text;html=1;align=left;verticalAlign=middle;fontSize=13;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="344" y="234" width="180" height="56" as="geometry"/>
+    </mxCell>
+    <mxCell id="rxn" value="A &#8594; B &#8594; C&#10;2A &#8594; D" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontStyle=1;strokeColor=none;fillColor=none;spacing=2;" vertex="1" parent="1">
+      <mxGeometry x="344" y="378" width="190" height="50" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="adnote" value="&lt;b&gt;Adiabatic&lt;/b&gt; &#8212; no jacket, no coolant, no heat exchanger. All the&#10;heat of reaction is retained, so T is a state and the rate constants&#10;&#954;&lt;sub&gt;i&lt;/sub&gt;(T) = k&lt;sub&gt;i0&lt;/sub&gt; exp(&#8722;E&lt;sub&gt;i&lt;/sub&gt;/RT) vary with it. As in Example 1, the dilution&#10;rate F/V&lt;sub&gt;r&lt;/sub&gt; is manipulated directly &#8212; no pump or valve is modelled." style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="620" y="150" width="500" height="86" as="geometry"/>
+    </mxCell>
+    <mxCell id="adlead" style="edgeStyle=none;html=1;endArrow=none;strokeColor=#999999;strokeWidth=1;dashed=1;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="554" y="240" as="sourcePoint"/>
+        <mxPoint x="616" y="212" as="targetPoint"/>
+      </mxGeometry>
+    </mxCell>
+
+    <mxCell id="ss" value="&lt;b&gt;Steady state&lt;/b&gt;&#10;(C&lt;sub&gt;A&lt;/sub&gt;&lt;sup&gt;s&lt;/sup&gt;, C&lt;sub&gt;B&lt;/sub&gt;&lt;sup&gt;s&lt;/sup&gt;, T&lt;sub&gt;s&lt;/sub&gt;) = (2.499, 0.624, 240.659 K)&#10;(F/V&lt;sub&gt;r&lt;/sub&gt;)&lt;sub&gt;s&lt;/sub&gt; = 0.1,&#160; &#961;&#8320;c&lt;sub&gt;p&lt;/sub&gt; = 1,&#160; R = 8.314" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="620" y="290" width="500" height="76" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="ptable" value="&lt;b&gt;Kinetic and thermal parameters&lt;/b&gt; (paper's Table 1)&lt;table cellspacing=&quot;0&quot; cellpadding=&quot;3&quot; style=&quot;margin-top:6px;border-collapse:collapse;font-size:11px&quot;&gt;&lt;tr style=&quot;border-bottom:1px solid #bbb&quot;&gt;&lt;td&gt;&#916;H&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;-5&lt;/td&gt;&lt;td style=&quot;padding-left:18px&quot;&gt;E&lt;sub&gt;1&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;15&lt;/td&gt;&lt;td style=&quot;padding-left:18px&quot;&gt;k&lt;sub&gt;10&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;0.05&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&#916;H&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;-15&lt;/td&gt;&lt;td style=&quot;padding-left:18px&quot;&gt;E&lt;sub&gt;2&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;25&lt;/td&gt;&lt;td style=&quot;padding-left:18px&quot;&gt;k&lt;sub&gt;20&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;0.1&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;&#916;H&lt;sub&gt;3&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;-20&lt;/td&gt;&lt;td style=&quot;padding-left:18px&quot;&gt;E&lt;sub&gt;3&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;15&lt;/td&gt;&lt;td style=&quot;padding-left:18px&quot;&gt;k&lt;sub&gt;30&lt;/sub&gt;&lt;/td&gt;&lt;td align=&quot;right&quot;&gt;0.101&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;" style="text;html=1;align=left;verticalAlign=top;fontSize=11;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="100" y="612" width="440" height="110" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="eqn" value="dC&lt;sub&gt;A&lt;/sub&gt;/dt = &#8722;&#954;&#8321;(T)C&lt;sub&gt;A&lt;/sub&gt; &#8722; &#954;&#8323;(T)C&lt;sub&gt;A&lt;/sub&gt;&#178; + (F/V&lt;sub&gt;r&lt;/sub&gt;)(C&lt;sub&gt;Af&lt;/sub&gt; &#8722; C&lt;sub&gt;A&lt;/sub&gt;)&#10;dC&lt;sub&gt;B&lt;/sub&gt;/dt =&#160; &#954;&#8321;(T)C&lt;sub&gt;A&lt;/sub&gt; &#8722; &#954;&#8322;(T)C&lt;sub&gt;B&lt;/sub&gt; &#8722; (F/V&lt;sub&gt;r&lt;/sub&gt;)C&lt;sub&gt;B&lt;/sub&gt;&#10;&#961;&#8320;c&lt;sub&gt;p&lt;/sub&gt; dT/dt = &#8722;&#931;&#916;H&lt;sub&gt;i&lt;/sub&gt; r&lt;sub&gt;i&lt;/sub&gt; + &#961;&#8320;c&lt;sub&gt;p&lt;/sub&gt;(F/V&lt;sub&gt;r&lt;/sub&gt;)(T&lt;sub&gt;f&lt;/sub&gt; &#8722; T)" style="text;html=1;align=left;verticalAlign=top;fontSize=12;fontColor=#333333;strokeColor=#cccccc;fillColor=#f7f7f7;spacing=8;" vertex="1" parent="1">
+      <mxGeometry x="570" y="612" width="550" height="76" as="geometry"/>
+    </mxCell>
+
+    <mxCell id="caveat" value="The paper contains no process schematic; this diagram is composed from its equations. Reactor dimensions are not specified &#8212; only the ratio F/V&lt;sub&gt;r&lt;/sub&gt; is used.&#10;&lt;b&gt;The paper's Table 1 carries no units column at all&lt;/b&gt;, so no units are printed for &#916;H, E, k or &#961;&#8320;c&lt;sub&gt;p&lt;/sub&gt;. Note also that a feed at 100 K with the reactor at 240.7 K is physically odd, though the values are internally self-consistent." style="text;html=1;align=left;verticalAlign=top;fontSize=10;fontColor=#777777;strokeColor=none;fillColor=none;spacing=4;" vertex="1" parent="1">
+      <mxGeometry x="100" y="730" width="1020" height="52" as="geometry"/>
+    </mxCell>
+
+  </root>
+</mxGraphModel>
