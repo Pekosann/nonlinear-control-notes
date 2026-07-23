@@ -96,11 +96,23 @@ entries:
       url: /204-change-of-coordinates.html
       output: web
 
+    - title: 205 — Hurwitz Polynomial
+      url: /205-hurwitz-polynomial.html
+      output: web
+
   - title: Paper Review
     output: web
     folderitems:
 
-    - title: "301 — Wu (1999): Stable Inverse Control (Motivation & I/O Linearization)"
-      url: /301-wu-1999-stable-inverse-control.html
+    - title: "301a — Wu (1999): Motivasi & Exact I/O Linearization"
+      url: /301a-wu-1999-motivasi.html
+      output: web
+
+    - title: "301b — Wu (1999): Stable Inversion (metode)"
+      url: /301b-wu-1999-stable-inversion.html
+      output: web
+
+    - title: "301c — Wu (1999): Van de Vusse & Kesimpulan"
+      url: /301c-wu-1999-van-de-vusse.html
       output: web
 

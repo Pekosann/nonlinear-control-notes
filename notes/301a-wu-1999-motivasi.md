@@ -1,9 +1,9 @@
 ---
-title: "301 — Wu (1999): Stable Inverse Control (Motivation & I/O Linearization)"
+title: "301a — Wu (1999): Motivasi & Exact I/O Linearization"
 section: Paper Review
 tags: [paper-review, feedback-linearization]
 summary: "Review Wu 1999 tentang stable inverse control untuk proses nonminimum-phase. Bagian 1: motivasi dan exact I/O linearization sampai control law (eq 6)."
-permalink: /301-wu-1999-stable-inverse-control.html
+permalink: /301a-wu-1999-motivasi.html
 folder: notes
 last_updated: Jul 23, 2026
 ---
@@ -92,8 +92,36 @@ $$
 
 bisa melinierkan peta I/O sistem. Ini persis hukum feedback linearization di [201 — Feedback Linearization: Konsep Intuitif](201-feedback-linearization-konsep.html) — membatalkan $L_f^r h$ (drift output) lalu membagi dengan $L_g L_f^{r-1}h$ (koefisien input, yaitu $a(z)$ di [203 — Normal Form](203-normal-form.html)). Substitusi eq 6 ke $\dot{\xi}_r$ memberi $\dot{\xi}_r = v$, jadi rantai integrator murni dari $v$ ke $y$.
 
-**Tapi ada masalah kalau nonminimum-phase.** Kalau internal dynamics (5) tidak stabil, feedback linearization ini **gagal**: mode tak teramati yang tak stabil tetap ada. Jadi exact I/O linearization **tidak bisa dicapai** untuk sistem nonlinier nonminimum-phase, karena skema linearisasi malah menghasilkan hukum kendali dengan inversi tak stabil. Inilah persoalan yang mau diselesaikan Wu di bagian-bagian berikutnya.
+**Tapi ada masalah kalau nonminimum-phase.** Kalau internal dynamics (5) tidak stabil, feedback linearization ini **gagal**: mode tak teramati yang tak stabil tetap ada. Jadi exact I/O linearization **tidak bisa dicapai** untuk sistem nonlinier nonminimum-phase, karena skema linearisasi malah menghasilkan hukum kendali dengan inversi tak stabil. Inilah persoalan yang mau diselesaikan Wu.
+
+## §1.2 Approximate output tracking control (AOTC)
+
+Sebelum metodenya sendiri, Wu meninjau pendekatan yang sudah ada: *approximate output tracking control* dari Hauser et al. — perluasan feedback linearization untuk sistem yang **sedikit** nonminimum-phase, dengan cara *approximate* I/O linearization.
+
+Idenya: cari relative degree konstan baru $\rho$ dengan $r < \rho < \infty$, lalu pakai change of coordinates baru (eq 7):
+
+$$
+(\tilde{\xi}^T, \tilde{\eta}^T)^T = \varpi(x) = \bigl(h(x),\; L_f h(x),\; \dots,\; L_f^{\rho-1}h(x),\; \tilde{\eta}_1(x),\; \dots,\; \tilde{\eta}_{n-\rho}(x)\bigr)^T \tag{7}
+$$
+
+dengan $L_g \tilde{\eta}_i(x) = 0$ (eq 8). Suku-suku nonlinier $L_g L_f^{r-1}h, \dots, L_g L_f^{\rho-2}h$ dianggap **kecil**, yaitu $|L_g L_f^i h(x)| = |\omega_i(x)| < 1$. Kalau suku-suku ini nol, sistemnya persis ekuivalen minimum-phase; sistem disebut *slightly* nonminimum-phase kalau efek nonlinieritas ini cukup kecil (eq 10).
+
+Control law aproksimasinya (eq 11):
+
+$$
+u = \frac{v - L_f^{\rho} h(x)}{L_g L_f^{\rho-1}h(x)} \tag{11}
+$$
+
+Untuk tracking trajektori $y_d$, pilih $v$ (eq 12):
+
+$$
+v = y_d^{(\rho)} - \sum_{i=1}^{\rho} k_i\bigl(L_f^{i-1}h(x) - y_d^{(i-1)}\bigr) \tag{12}
+$$
+
+dengan $k_i > 0$ dipilih supaya polinomial $s^{\rho} + k_{\rho}s^{\rho-1} + \dots + k_1$ Hurwitz (eq 13) — sama polanya dengan pole placement di [201 — Feedback Linearization: Konsep Intuitif](201-feedback-linearization-konsep.html).
+
+**Remark 1** [@weiwu1999]. *...the so-called approximate output tracking control for nonminimum-phase process would be lack of robustness against disturbances.* Inilah kelemahan yang mendorong Wu mengembangkan **stable inversion**.
 
 ---
 
-*Bersambung: §1.2 (approximate output tracking control) dan seterusnya.*
+*Lanjut ke [§2 — Stable Inverse Control](301b-wu-1999-stable-inversion.html) (metode utama paper).*
