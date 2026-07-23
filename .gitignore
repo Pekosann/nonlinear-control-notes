@@ -7,3 +7,6 @@ vendor/
 *.swp
 .DS_Store
 Thumbs.db
+
+# personal / copyrighted source material, kept locally, never published
+_archive/

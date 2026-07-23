@@ -2,7 +2,7 @@
 title: 102 — CSTR Orde-n Adebekun
 section: Example
 tags: [cstr, control-affine]
-summary: CSTR non-isotermal reaksi orde-n dalam bentuk tak berdimensi (Adebekun & Schork 1991), dan kenapa modelnya control-affine.
+summary: "CSTR non-isotermal reaksi orde-n dalam bentuk tak berdimensi (Adebekun & Schork 1991), dan kenapa modelnya control-affine."
 permalink: /102-adebekun-cstr-orde-n.html
 folder: notes
 last_updated: Jul 23, 2026

@@ -48,3 +48,11 @@ entries:
       url: /102-adebekun-cstr-orde-n.html
       output: web
 
+  - title: Feedback Linearization
+    output: web
+    folderitems:
+
+    - title: "201 — Feedback Linearization: Konsep Intuitif"
+      url: /201-feedback-linearization-konsep.html
+      output: web
+

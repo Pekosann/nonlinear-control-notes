@@ -46,6 +46,20 @@ function Get-Slug($text) {
     return $s.Trim('-')
 }
 
+# Quote a scalar for YAML if it contains anything that would break a bare value:
+# a colon (mapping), leading special chars, brackets, quotes, #, etc. A title
+# like "201 — Feedback Linearization: Konsep" MUST be quoted or the parser dies.
+function Format-YamlScalar($text) {
+    $s = "$text"
+    if ($s -match '^\s*$') { return '""' }
+    # already wrapped in matching double quotes -> leave as-is
+    if ($s -match '^".*"$') { return $s }
+    if ($s -match '[:#\[\]\{\}&\*!\|>%@`"'']' -or $s -match '^[\s\-\?]' -or $s -match '\s$') {
+        return '"' + ($s -replace '\\', '\\' -replace '"', '\"') + '"'
+    }
+    return $s
+}
+
 # Normalise inline math back to Obsidian's single-dollar form.
 # The site no longer needs $$...$$ inline — _plugins/inline_math.rb does that
 # conversion at build time — and in Obsidian $$...$$ means a centred display
@@ -262,7 +276,11 @@ foreach ($f in $files) {
     # --- reassemble ---------------------------------------------------------
     $order = @('title', 'section', 'tags', 'summary', 'permalink', 'folder', 'last_updated')
     $lines = @('---')
-    foreach ($k in $order) { $lines += "{0}: {1}" -f $k, $fm[$k] }
+    # title and summary are free text and may contain colons -> YAML-quote them.
+    foreach ($k in $order) {
+        $val = if ($k -eq 'title' -or $k -eq 'summary') { Format-YamlScalar $fm[$k] } else { $fm[$k] }
+        $lines += "{0}: {1}" -f $k, $val
+    }
     foreach ($k in $fm.Keys) { if ($order -notcontains $k) { $lines += "{0}: {1}" -f $k, $fm[$k] } }
     $lines += '---'
     $new = ($lines -join "`n") + "`n`n" + $body.TrimEnd() + "`n"
@@ -309,12 +327,12 @@ $orderedSections = @()
 foreach ($e in $entries) { if ($orderedSections -notcontains $e.Section) { $orderedSections += $e.Section } }
 
 foreach ($sec in $orderedSections) {
-    $sb.Add("  - title: $sec")
+    $sb.Add("  - title: $(Format-YamlScalar $sec)")
     $sb.Add('    output: web')
     $sb.Add('    folderitems:')
     $sb.Add('')
     foreach ($e in ($entries | Where-Object Section -eq $sec)) {
-        $sb.Add("    - title: $($e.Title)")
+        $sb.Add("    - title: $(Format-YamlScalar $e.Title)")
         $sb.Add("      url: /$($e.Slug).html")
         $sb.Add('      output: web')
         $sb.Add('')
