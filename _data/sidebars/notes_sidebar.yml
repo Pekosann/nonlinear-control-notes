@@ -96,3 +96,11 @@ entries:
       url: /204-change-of-coordinates.html
       output: web
 
+  - title: Paper Review
+    output: web
+    folderitems:
+
+    - title: "301 — Wu (1999): Stable Inverse Control (Motivation & I/O Linearization)"
+      url: /301-wu-1999-stable-inverse-control.html
+      output: web
+
