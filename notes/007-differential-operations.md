@@ -50,21 +50,22 @@ $$
 \mathrm{ad}_f^k\, g(x) = [f,\, \mathrm{ad}_f^{k-1}\, g](x), \qquad \mathrm{ad}_f^0\, g(x) = g(x)
 $$
 
-**Proposition 1.2.1** [@isidori1995] — Lie product punya tiga sifat dasar:
+**Proposition 1.2.1** [@isidori1995]. *The Lie product of vector fields has the following properties:*
 
-- **Bilinear** atas $\mathbb{R}$: untuk vector field $f_1, f_2, g_1, g_2$ dan bilangan real $r_1, r_2$,
+*(i) is bilinear over $\mathbb{R}$, i.e. if $f_1, f_2, g_1, g_2$ are vector fields and $r_1, r_2$ real numbers, then*
 
 $$
-[r_1 f_1 + r_2 f_2,\, g_1] = r_1[f_1, g_1] + r_2[f_2, g_1]
+[r_1 f_1 + r_2 f_2,\, g_1] = r_1[f_1, g_1] + r_2[f_2, g_1], \qquad
+[f_1,\, r_1 g_1 + r_2 g_2] = r_1[f_1, g_1] + r_2[f_1, g_2]
 $$
 
-- **Skew-commutative**:
+*(ii) is skew commutative, i.e.*
 
 $$
 [f, g] = -[g, f]
 $$
 
-- Memenuhi **Jacobi identity**: untuk vector field $f, g, p$,
+*(iii) satisfies the Jacobi identity, i.e. if $f, g, p$ are vector fields, then*
 
 $$
 [f, [g, p]] + [g, [p, f]] + [p, [f, g]] = 0

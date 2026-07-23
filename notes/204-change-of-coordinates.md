@@ -38,7 +38,7 @@ Inilah rumus yang menghubungkan deskripsi baru sistem dengan yang lama [@isidori
 
 Bagaimana memastikan $\Phi$ benar-benar change of coordinates yang sah, minimal secara lokal? Tidak perlu membuktikan invertibilitas global — cukup cek Jacobian-nya.
 
-**Proposition 1.2.3** [@isidori1995] — misalkan $\Phi(x)$ fungsi mulus pada himpunan bagian $U \subseteq \mathbb{R}^n$. Kalau matriks Jacobian $\dfrac{\partial \Phi}{\partial x}$ nonsingular di titik $x^\circ$, maka pada suatu himpunan terbuka $U^\circ \subseteq U$ yang memuat $x^\circ$, $\Phi$ mendefinisikan sebuah **local diffeomorphism**.
+**Proposition 1.2.3** [@isidori1995]. *Suppose $\Phi(x)$ is a smooth function defined on some subset $U$ of $\mathbb{R}^n$. Suppose the jacobian matrix of $\Phi$ is nonsingular at a point $x = x^\circ$. Then, on a suitable open subset $U^\circ$ of $U$, containing $x^\circ$, $\Phi(x)$ defines a local diffeomorphism.*
 
 Ini konsekuensi *inverse function theorem*, dan inilah kriteria praktis yang dipakai [203 — Normal Form](203-normal-form.html): cukup pastikan $\partial \Phi / \partial x$ nonsingular, tak perlu mencari inversnya secara eksplisit.
 
