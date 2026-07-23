@@ -84,3 +84,11 @@ entries:
       url: /202-relative-degree.html
       output: web
 
+    - title: 203 — Normal Form
+      url: /203-normal-form.html
+      output: web
+
+    - title: 204 — Change of Coordinates
+      url: /204-change-of-coordinates.html
+      output: web
+
