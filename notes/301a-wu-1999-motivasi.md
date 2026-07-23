@@ -106,6 +106,8 @@ $$
 
 dengan $L_g \tilde{\eta}_i(x) = 0$ (eq 8). Suku-suku nonlinier $L_g L_f^{r-1}h, \dots, L_g L_f^{\rho-2}h$ dianggap **kecil**, yaitu $|L_g L_f^i h(x)| = |\omega_i(x)| < 1$. Kalau suku-suku ini nol, sistemnya persis ekuivalen minimum-phase; sistem disebut *slightly* nonminimum-phase kalau efek nonlinieritas ini cukup kecil (eq 10).
 
+> **Apa itu $\omega_i(x)$?** Ini bukan gangguan, melainkan sekadar **nama** untuk suku Lie-derivative campuran itu sendiri: $\omega_i(x) := L_g L_f^i h(x)$, $i = r-1, \dots, \rho-2$. Relative degree *sebenarnya* adalah $r$, jadi suku-suku ini tidak nol — mereka penghalang untuk punya relative degree $\rho$ yang lebih tinggi. $\omega_i(x)$ mengukur seberapa kuat input "bocor" di orde-orde antara itu; AOTC menganggapnya kecil lalu mengabaikannya. **Awas**: $\omega_i(x)$ ini beda dari $\omega(t)$ (gangguan) di [301b — Wu (1999): Stable Inversion (metode)](301b-wu-1999-stable-inversion.html) — huruf sama, makna beda (lihat [000 — Abbreviations & Notasi Standar](000-abbreviations.html)).
+
 Control law aproksimasinya (eq 11):
 
 $$

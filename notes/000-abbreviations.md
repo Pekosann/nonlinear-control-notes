@@ -129,6 +129,7 @@ Beberapa lambang dipakai untuk hal berbeda tergantung konteks — perhatikan bai
 - $B$ — matriks input sistem linier, **tapi** di 102 $B$ adalah kalor reaksi tak berdimensi.
 - $p$ — dimensi vektor gangguan, **tapi** juga dipakai untuk $p(x)$ (disturbance vector field) dan $p_i(z)$ (internal dynamics).
 - $h$ — fungsi output $h(x)$, **tapi** di contoh tangki $h$ adalah tinggi cairan.
+- $\omega$ — di 301a $\omega_i(x) = L_g L_f^i h(x)$ (suku kopling, fungsi state), **tapi** di 301b $\omega(t) \in \mathbb{R}^p$ adalah gangguan (*disturbance*).
 
 ## Cara konversi
 
