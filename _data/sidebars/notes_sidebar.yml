@@ -24,6 +24,10 @@ entries:
     output: web
     folderitems:
 
+    - title: "000 — Abbreviations & Notasi Standar"
+      url: /000-abbreviations.html
+      output: web
+
     - title: 001 — Sistem Nonlinier Control Affine
       url: /001-sistem-nonlinier-control-affine.html
       output: web
