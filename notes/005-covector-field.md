@@ -105,3 +105,4 @@ Covector field yang paling penting, yaitu *differential* $dh$ yang baru saja dip
 ## Bacaan lanjut
 
 - 3Blue1Brown — [*Dot products and duality* (Essence of Linear Algebra, Ch. 9)](https://www.youtube.com/watch?v=LyGKycYT2v0). Membangun intuisi "alat ukur" di atas secara visual: kenapa sebuah vektor baris sebenarnya adalah pemetaan linier ke garis bilangan, dan bagaimana dot product muncul dari dualitas ini.
+- eigenchris — [*Introducing Dual Vectors: Intuition and Definition*](https://www.youtube.com/watch?v=wZ2G-b-Ttww). Memperkenalkan covector (dual vector / one-form) sebagai fungsi yang bekerja pada vektor, langsung dari sudut pandang tensor calculus.
