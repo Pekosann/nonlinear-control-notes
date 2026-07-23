@@ -5,7 +5,7 @@ tags: [dasar]
 summary: Model nonlinier umum di mana input boleh muncul secara nonlinier, dan perilaku khas yang tidak dimiliki sistem linier.
 permalink: /002-sistem-nonlinier.html
 folder: notes
-last_updated: Jul 22, 2026
+last_updated: Jul 23, 2026
 ---
 
 Di [001 — Sistem Nonlinier Control Affine](001-sistem-nonlinier-control-affine.html) input $u$ masuk secara linier. Syarat itu tidak selalu terpenuhi. Kalau input boleh muncul di dalam fungsi nonlinier, yang tersisa adalah bentuk **nonlinier umum**.
@@ -28,7 +28,7 @@ Dua asumsi yang dipakai [@henson1990] untuk model ini: state proses dapat diukur
 
 Contoh konkretnya ada di [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html), di mana laju alir pendingin muncul di dalam suku eksponensial.
 
-Pers. (2) masih menganggap bentuk $f$ tetap sepanjang waktu. Kalau waktu ikut masuk sebagai variabel, sistemnya jadi *non-autonomous* — dibahas terpisah di [003 — Sistem Autonomous dan Non-Autonomous](003-autonomous-dan-non-autonomous.html).
+Pers. (2) masih menganggap bentuk $f$ tetap sepanjang waktu. Kalau waktu ikut masuk sebagai variabel, sistemnya jadi *non-autonomous* — dibahas di [003 — Sistem Autonomous dan Non-Autonomous](003-autonomous-dan-non-autonomous.html).
 
 ## Kenapa sistem nonlinier perlu perlakuan khusus
 

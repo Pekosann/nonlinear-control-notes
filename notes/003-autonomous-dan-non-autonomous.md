@@ -24,9 +24,9 @@ $\dot{x} = f(x)\quad(2)$
 
 Kalau $f$ bergantung eksplisit pada waktu, sistemnya disebut **non-autonomous**.
 
-## Soal istilah
+## Sistem linier
 
-Pada sistem linier kita terbiasa dengan *time-invariant* dan *time-varying*, tergantung apakah matriks $A$ berubah terhadap waktu atau tidak. Untuk konteks nonlinier yang lebih umum, [@slotine1991] mencatat bahwa kedua kata sifat itu secara tradisional diganti menjadi **autonomous** dan **non-autonomous**. Konsekuensinya, sistem LTI bersifat autonomous dan sistem LTV bersifat non-autonomous.
+Pada sistem linier kita menggunakan *time-invariant* dan *time-varying*, tergantung apakah matriks $A$ berubah terhadap waktu atau tidak. Untuk konteks nonlinier yang lebih umum, [@slotine1991] mencatat bahwa kedua kata sifat itu secara tradisional diganti menjadi **autonomous** dan **non-autonomous**. Konsekuensinya, sistem LTI bersifat autonomous dan sistem LTV bersifat non-autonomous.
 
 ## Dengan input dan gangguan
 

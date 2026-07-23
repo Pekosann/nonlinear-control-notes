@@ -82,15 +82,21 @@ module Bibliography
 
     # BibTeX braces/escapes -> plain text.
     def clean(str)
-      str.to_s
-         .gsub(/[{}]/, '')
-         .gsub(/\\&/, '&')
-         .gsub(/\\%/, '%')
-         .gsub(/\\_/, '_')
-         .gsub(/\\textendash\b/, '–')
-         .gsub(/~/, ' ')
-         .gsub(/\s+/, ' ')
-         .strip
+      s = str.to_s
+      # Escaped specials first (before backslash-macros are touched).
+      s = s.gsub(/\\&/, '&').gsub(/\\%/, '%').gsub(/\\_/, '_').gsub(/\\\$/, '$')
+           .gsub(/\\textendash\b/, '–').gsub(/\\textemdash\b/, '—')
+      # Macros Better BibTeX emits for title-casing / formatting. Handle the
+      # one-argument brace form and the bare form, keeping the argument.
+      3.times do
+        s = s.gsub(/\\(?:mkbibemph|mkbibitalic|emph|textbf|textit|textsuperscript|textsubscript|text|mathrm|mbox)\s*\{([^{}]*)\}/, '\1')
+      end
+      # Any leftover bare control sequence: drop the command, keep following text.
+      s = s.gsub(/\\[A-Za-z]+\s*/, '')
+      s.gsub(/[{}]/, '')
+       .gsub(/~/, ' ')
+       .gsub(/\s+/, ' ')
+       .strip
     end
 
     # ------------------------------------------------------------- format ----
