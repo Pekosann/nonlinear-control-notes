@@ -45,4 +45,34 @@ $$
 
 dengan tiap $\omega_i$ fungsi mulus dari $x_1, \dots, x_n$ [@isidori1995].
 
-Contoh covector field yang paling penting adalah *differential* dari sebuah fungsi skalar, dibahas di [006 — Exact Differential](006-exact-differential.html).
+## Aplikasi: laju perubahan output terukur
+
+Kenapa perlu membedakan vektor dan covector? Karena keduanya muncul sebagai objek yang berbeda dalam persoalan kendali, dan *inner product* di atas justru yang menyatukannya jadi besaran fisik.
+
+Sebuah sensor mengukur output $y = h(x)$ — fungsi skalar dari state. Gradiennya, $dh$, adalah sebuah **covector field** (dibahas di [006 — Exact Differential](006-exact-differential.html)). Di sisi lain, dinamika sistem memberi laju state $\dot{x} = f(x)$ — sebuah **vector field** ([004 — Vector Field](004-vector-field.html)). Pertanyaan "seberapa cepat nilai yang saya ukur berubah?" ternyata persis pemasangan keduanya lewat inner product tadi:
+
+$$
+\dot{y} = \sum_{i=1}^{n} \frac{\partial h}{\partial x_i}\,\dot{x}_i = \langle dh(x),\, f(x) \rangle = L_f h(x)
+$$
+
+Inilah maksud konkret dari covector: velocity (vektor) dan gradient dari besaran terukur (covector) adalah dua objek berbeda, dan inner product $\langle w^\star, v \rangle$-lah yang mengubah keduanya jadi satu laju.
+
+### Contoh: CSTR dua tangki
+
+Ambil model di [101 — Dua Tangki CSTR](101-dua-tangki-CSTR.html), dengan output konsentrasi keluaran $y = C_{A2} = x_3$. Differential-nya adalah covector konstan
+
+$$
+dh = \begin{bmatrix} 0 & 0 & 1 & 0 \end{bmatrix}
+$$
+
+Memasangkannya dengan vector field $f$ hanya memungut komponen ketiga:
+
+$$
+\dot{y} = \langle dh,\, f(x) \rangle = f_3(x) = \dot{C}_{A2}
+$$
+
+yaitu tepat neraca massa tangki kedua. Di paper Henson & Seborg langkah ini muncul sebagai $[L_f^1 h] = f_3$ — turunan Lie pertama dari output.
+
+Kalau diulang — memasangkan $d(L_f h)$ dengan $f$ lagi, dan seterusnya sampai input $u$ muncul — kita mendapatkan konsep *relative degree*, fondasi dari [201 — Feedback Linearization: Konsep Intuitif](201-feedback-linearization-konsep.html).
+
+Covector field yang paling penting, yaitu *differential* $dh$ yang baru saja dipakai di atas, dibahas lebih lanjut di [006 — Exact Differential](006-exact-differential.html).
