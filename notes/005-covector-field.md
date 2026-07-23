@@ -101,3 +101,7 @@ yaitu tepat neraca massa tangki kedua. Di paper Henson & Seborg langkah ini munc
 Kalau diulang — memasangkan $d(L_f h)$ dengan $f$ lagi, dan seterusnya sampai input $u$ muncul — kita mendapatkan konsep *relative degree*, fondasi dari [201 — Feedback Linearization: Konsep Intuitif](201-feedback-linearization-konsep.html).
 
 Covector field yang paling penting, yaitu *differential* $dh$ yang baru saja dipakai di atas, dibahas lebih lanjut di [006 — Exact Differential](006-exact-differential.html).
+
+## Bacaan lanjut
+
+- 3Blue1Brown — [*Dot products and duality* (Essence of Linear Algebra, Ch. 9)](https://www.youtube.com/watch?v=LyGKycYT2v0). Membangun intuisi "alat ukur" di atas secara visual: kenapa sebuah vektor baris sebenarnya adalah pemetaan linier ke garis bilangan, dan bagaimana dot product muncul dari dualitas ini.
