@@ -35,6 +35,31 @@ $$
 
 Seperti lazim di literatur, nilai ini sering ditulis sebagai *inner product*, $\langle w^\star, v \rangle$, ketimbang sekadar $w^\star v$ [@isidori1995].
 
+## Intuisi: covector sebagai "alat ukur"
+
+Definisi di atas terasa abstrak. Ada satu cara berpikir yang membuatnya jauh lebih konkret: **sebuah covector adalah semacam alat ukur (*ruler*).** Kamu "menempelkan" sebuah vektor padanya lalu membaca satu angka. Di $\mathbb{R}^n$ alat ukur ini adalah vektor baris, dan "mengukur" berarti dot product — persis $w^\star v = \sum w_i v_i$ tadi. Itulah kenapa vektor ditulis kolom dan covector ditulis baris: pengukurannya adalah perkalian baris $\times$ kolom yang menghasilkan satu skalar.
+
+Secara geometris di $\mathbb{R}^2$, sebuah covector bisa dibayangkan sebagai **sekumpulan garis sejajar** (level set-nya). Kamu masukkan sebuah vektor, dan nilainya ditentukan oleh garis ke berapa yang disentuh ujung vektor itu. Makin rapat garisnya, makin "kuat" alat ukurnya — vektor yang sama memberi angka lebih besar.
+
+Di dimensi $\geq 3$, atau di ruang vektor abstrak (ruang polinomial, ruang fungsi), gambar garis-garis ini hilang. Tapi idenya tetap sama: **dual space adalah ruang berisi semua "alat" yang bisa mengukur vektor di ruangmu**, seaneh apa pun vektor itu.
+
+> Soal membayangkan dimensi tinggi, ada nasihat setengah bercanda dari Geoffrey Hinton: *"Untuk membayangkan hyperplane di ruang 14 dimensi, bayangkan ruang 3 dimensi lalu ucapkan 'empat belas' keras-keras pada dirimu sendiri. Semua orang begitu."*
+
+### Analogi menu dan pesanan
+
+Analogi yang paling pas untuk memisahkan dua objek ini: bayangkan kamu memesan makanan.
+
+- **Vektor = sebuah pesanan**, misalnya "3 pizza keju, 1 pepperoni, 1 sosis". Pesanan bisa dijumlahkan dan dikali skalar (pesan $3\times$ lebih banyak), jadi ruang semua pesanan adalah ruang vektor $V$.
+- **Covector = sebuah menu**, yaitu daftar harga. Menu menerima satu pesanan dan mengembalikan satu angka: harganya. Dan ia melakukannya secara linier — pesan $3\times$ lipat maka harganya $3\times$; gabungan dua pesanan harganya jumlah dari masing-masing.
+
+Menu yang berbeda memberi harga berbeda untuk pesanan yang sama (satu tempat pepperoni-nya mahal, tempat lain murah), tapi satu menu memberi harga untuk pesanan apa pun. **Ruang semua menu itulah dual space $V^\star$.**
+
+Kuncinya: menu (covector) dan pesanan (vektor) adalah dua jenis benda yang berbeda. Kamu tidak pernah "menjumlahkan menu dengan pesanan" — kamu memakai menu untuk *mengukur* pesanan. Persis seperti covector yang mengukur vektor, bukan bagian dari ruang vektor yang sama.
+
+Dan tidak apa-apa kalau gambaran geometrisnya terasa hilang di ruang abstrak. Intuisi sering justru datang belakangan, setelah cukup lama bekerja dengan objeknya — bukan syarat di awal.
+
+Kembali ke konteks kendali: di [bagian aplikasi](#aplikasi-laju-perubahan-output-terukur) di bawah, gradient output $dh$ adalah persis "menu" itu — ia memberi harga pada vektor kecepatan $f$, dan harganya adalah laju perubahan output $\dot{y}$.
+
 ## Covector field
 
 Sebuah **covector field** adalah pemetaan mulus yang memberikan kepada tiap titik $x \in U$ sebuah elemen dual space $(\mathbb{R}^n)^\star$, yaitu vektor baris
