@@ -5,10 +5,10 @@ tags: [dasar, control-affine]
 summary: Bentuk control-affine, arti kata affine, dan kenapa sistem linier hanyalah kasus spesialnya.
 permalink: /001-sistem-nonlinier-control-affine.html
 folder: notes
-last_updated: Jul 22, 2026
+last_updated: Jul 23, 2026
 ---
 
-Misalkan sebuah sistem dapat dibentuk menjadi persamaan *nonlinear differential* dengan bentuk [@zotero-item-11]:
+Misalkan sebuah sistem dapat dibentuk menjadi persamaan *nonlinear differential* dengan bentuk [@isidori]:
 $\dot{x}=f(x)+g(x)u\quad (1)$
 $y=h(x)\quad(2)$
 memiliki *internal state* $x=(x_1,x_2,...,x_n)\in\mathbb{R}^n$

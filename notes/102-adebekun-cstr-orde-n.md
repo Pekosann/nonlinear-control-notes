@@ -71,4 +71,4 @@ $$
 
 $g$ dan $p$ konstan — tidak bergantung $x$ — karena $u$ dan $d$ sama-sama masuk secara linier ke neraca energi. Inilah struktur pada Pers. (1) di [002 — Sistem Nonlinier Umum](002-sistem-nonlinier.html), dengan gangguan $d$ yang juga affine.
 
-> Karena affine, hukum kendali untuk membatalkan dinamika drift bisa diturunkan secara eksplisit. Justru di sinilah [@adebekun1991] membangun pengendali reference model-nya, dan membuktikan stabilisasi global asalkan gain pengendali $k > 0$ — tanpa perlu tuning ulang ketika orde reaksi $n$ berubah.
+> Karena affine, hukum kendali untuk membatalkan dinamika drift bisa diturunkan secara eksplisit. Di sinilah [@adebekun1991] membangun pengendali reference model-nya, dan membuktikan stabilisasi global asalkan gain pengendali $k > 0$ — tanpa perlu tuning ulang ketika orde reaksi $n$ berubah.
