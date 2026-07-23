@@ -80,3 +80,7 @@ entries:
       url: /201-feedback-linearization-konsep.html
       output: web
 
+    - title: 202 — Relative Degree
+      url: /202-relative-degree.html
+      output: web
+
