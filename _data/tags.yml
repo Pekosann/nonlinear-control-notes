@@ -4,4 +4,5 @@ allowed-tags:
   - control-affine
   - cstr
   - dasar
+  - differential-geometry
   - feedback-linearization

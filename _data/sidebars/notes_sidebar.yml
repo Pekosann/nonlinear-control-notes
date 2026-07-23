@@ -36,6 +36,30 @@ entries:
       url: /003-autonomous-dan-non-autonomous.html
       output: web
 
+  - title: Differential Geometry
+    output: web
+    folderitems:
+
+    - title: 004 — Vector Field
+      url: /004-vector-field.html
+      output: web
+
+    - title: 005 — Covector Field
+      url: /005-covector-field.html
+      output: web
+
+    - title: 006 — Exact Differential
+      url: /006-exact-differential.html
+      output: web
+
+    - title: 007 — Three Types of Differential Operation
+      url: /007-differential-operations.html
+      output: web
+
+    - title: 008 — Global Diffeomorphism
+      url: /008-global-diffeomorphism.html
+      output: web
+
   - title: Example
     output: web
     folderitems:
